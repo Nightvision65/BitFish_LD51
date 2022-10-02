@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Grid
+    uniqueID: 3422307545
+    locked: 0
+  - name: Unit
+    uniqueID: 2614895461
+    locked: 0
