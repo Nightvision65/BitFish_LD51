@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitPlaced : MonoBehaviour
 {
-    public int unitType, unitWidth, unitHeight;
+    public int unitType, unitWidth, unitHeight, unitAngle, unitFlip;
     // Start is called before the first frame update
     void Start()
     {
