@@ -5,14 +5,16 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
     public static Global instance;
-    public GameObject vehicleUnitPlacing;
-    public List<GameObject> vehicleUnit;
+    public List<GameObject> chariotUnit;
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
     }
-
+    void Start()
+    {
+        LevelManager.instance.StartConstruct();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -21,10 +23,22 @@ public class Global : MonoBehaviour
 
     void debugFunc()
     {
-        if (Input.GetMouseButtonUp(0) && !GameObject.FindGameObjectWithTag("Placing"))
+        if (Input.GetKeyDown(KeyCode.F1))
         {
-            GameObject up = Instantiate(vehicleUnitPlacing, transform.position, Quaternion.Euler(0, 0, 0));
-            up.GetComponent<UnitPlacing>().unitIndex = Random.Range(0, vehicleUnit.Capacity);
+            LevelManager.instance.StartConstruct();
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            LevelManager.instance.EndConstruct();
+            LevelManager.instance.StartConstruct();
+        }
+        for (int i = 0; i < chariotUnit.Capacity; i++) {
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Placing"));
+                GameObject up = Instantiate(LevelManager.instance.placingObject, transform);
+                up.GetComponent<UnitPlacing>().unitIndex = i;
+            }
         }
     }
 }

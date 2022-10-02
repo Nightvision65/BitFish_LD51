@@ -5,7 +5,6 @@ using UnityEngine;
 public class UnitGrid : MonoBehaviour
 {
     public static UnitGrid instance;
-    public Vector2 startPosition;    //创造的网格起始位置
     public int width, height;   //网格长宽
     public float gridWidth; //格子宽度
     public UnitPlaced[,] gridUnit;   //网格单元
@@ -73,6 +72,32 @@ public class UnitGrid : MonoBehaviour
         else
         {
             return null;
+        }
+    }
+    
+    //机甲合体
+    public void ChariotCombine()
+    {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (gridUnit[i, j])
+                {
+                    gridUnit[i, j].UnitCombine(i, j);
+                }
+            }
+        }
+    }
+
+    public void ClearGrid()
+    {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                gridUnit[i, j] = null;
+            }
         }
     }
 }

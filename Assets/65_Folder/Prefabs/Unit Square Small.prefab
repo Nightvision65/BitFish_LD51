@@ -149,3 +149,5 @@ MonoBehaviour:
   unitHeight: 0
   unitAngle: 0
   unitFlip: 0
+  unitRbody:
+  - {fileID: 7409273018198327980}

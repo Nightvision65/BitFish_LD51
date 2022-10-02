@@ -6,7 +6,7 @@ public class UnitPlacing : MonoBehaviour
 {
     public bool placeable;
     public int unitIndex, unitAngle, unitFlip;
-    public Vector2Int gridPos;
+    public Vector2Int gridPos;  //所处网格位置
     private Color outGrid = new Color(1, 1, 1, 0), inGrid = new Color(1, 1, 1, 0.49f), unplaceable = new Color(1, 0.5f, 0.5f, 0.49f);
     private SpriteRenderer mSprite;
     private GameObject mUnit;
@@ -15,7 +15,7 @@ public class UnitPlacing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mUnit = Global.instance.vehicleUnit[unitIndex];
+        mUnit = Global.instance.chariotUnit[unitIndex];
         mSprite = GetComponent<SpriteRenderer>();
         mSprite.sprite = mUnit.GetComponent<SpriteRenderer>().sprite;
         unitWidth = mUnit.GetComponent<UnitPlaced>().unitWidth;
@@ -40,7 +40,11 @@ public class UnitPlacing : MonoBehaviour
         {
             for (int j = Mathf.Min(0, unitHeight); j <= Mathf.Max(0, unitHeight); j++)
             {
-                if (!UnitGrid.instance.IsGridEmpty(gridPos.x + i, gridPos.y + j)) can = false;
+                if (!UnitGrid.instance.IsGridEmpty(gridPos.x + i, gridPos.y + j))
+                {
+                    can = false;
+                    break;
+                }
             }
         }
         return can;
@@ -54,6 +58,7 @@ public class UnitPlacing : MonoBehaviour
             int t = unitWidth;
             unitWidth = -unitHeight;
             unitHeight = t;
+            unitAngle = (unitAngle + 1) % 4;
             transform.Rotate(new Vector3(0, 0, 90));
         }
     }
@@ -92,7 +97,7 @@ public class UnitPlacing : MonoBehaviour
     {
         if (keyPlace && placeable)
         {
-            GameObject placedUnit = Instantiate(mUnit, transform.position, transform.rotation);
+            GameObject placedUnit = Instantiate(mUnit, transform.position, transform.rotation, GameObject.FindGameObjectWithTag("Chariot").transform);
             UnitPlaced unitScript = placedUnit.GetComponent<UnitPlaced>();
             unitScript.unitWidth = unitWidth;
             unitScript.unitHeight = unitHeight;
