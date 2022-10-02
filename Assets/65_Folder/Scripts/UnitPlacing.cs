@@ -6,7 +6,7 @@ public class UnitPlacing : MonoBehaviour
 {
     public bool placeable;
     public int unitIndex, unitAngle, unitFlip;
-    private Color outGrid = new Color(1, 1, 1, 0), inGrid = new Color(1, 1, 1, 0.49f), unplaceable = new Color(0.5f, 1, 1, 0.49f);
+    private Color outGrid = new Color(1, 1, 1, 0), inGrid = new Color(1, 1, 1, 0.49f), unplaceable = new Color(1, 0.5f, 0.5f, 0.49f);
     private SpriteRenderer mSprite;
     private int unitWidth, unitHeight;
     // Start is called before the first frame update
@@ -67,4 +67,11 @@ public class UnitPlacing : MonoBehaviour
     }
 
     //∑≈÷√ŒÔÃÂ
+    void PlaceUnit()
+    {
+        if (placeable)
+        {
+
+        }
+    }
 }

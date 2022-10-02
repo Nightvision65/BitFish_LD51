@@ -11,10 +11,13 @@ public class UnitGrid : MonoBehaviour
     public UnitPlaced[,] gridUnit;   //Íø¸ñµ¥Ôª
     private SpriteRenderer mSprite;
 
+    void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         gridUnit = new UnitPlaced[width, height];
         mSprite = GetComponent<SpriteRenderer>();
         mSprite.size = new Vector2(width * 0.32f, height * 0.32f);

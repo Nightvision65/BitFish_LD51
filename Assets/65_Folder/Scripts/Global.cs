@@ -7,7 +7,7 @@ public class Global : MonoBehaviour
     public static Global instance;
     public List<GameObject> vehicleUnit;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
     }
