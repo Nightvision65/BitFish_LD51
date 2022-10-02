@@ -36,7 +36,7 @@ public class UnitPlaced : MonoBehaviour
     //焊接零件（继承方法）
     public virtual void UnitCombine(int x, int y)
     {
-        for (int dir = 3; dir <= 4; dir++)
+        for (int dir = 1; dir <= 4; dir++)
         {
             UnitPlaced unitScript = UnitGrid.instance.GetUnitScript(x, y, dir);
             if (unitScript && !hasJoint(unitScript) && unitScript.unitType == 0)

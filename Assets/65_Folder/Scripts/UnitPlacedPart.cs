@@ -10,7 +10,6 @@ public class UnitPlacedPart : UnitPlaced
         UnitPlaced unitScript = UnitGrid.instance.GetUnitScript(x, y, unitAngle + 1);
         if (unitScript && !hasJoint(unitScript) && unitScript.unitType == 0)
         {
-            Debug.Log(unitAngle);
             jointUnit.Add(unitScript);
             FixedJoint2D joint = unitRbody[0].gameObject.AddComponent<FixedJoint2D>();
             joint.connectedBody = unitScript.unitRbody[0];

@@ -19,7 +19,7 @@ public class UnitGrid : MonoBehaviour
     {
         gridUnit = new UnitPlaced[width, height];
         mSprite = GetComponent<SpriteRenderer>();
-        mSprite.size = new Vector2(width * 0.32f, height * 0.32f);
+        mSprite.size = new Vector2(width * gridWidth, height * gridWidth);
     }
 
     // Update is called once per frame
@@ -75,7 +75,7 @@ public class UnitGrid : MonoBehaviour
         }
     }
     
-    //机甲合体
+    //机甲合体！变身！
     public void ChariotCombine()
     {
         for (int i = 0; i < width; i++)

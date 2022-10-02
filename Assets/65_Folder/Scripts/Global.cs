@@ -32,7 +32,7 @@ public class Global : MonoBehaviour
             LevelManager.instance.EndConstruct();
             LevelManager.instance.StartConstruct();
         }
-        for (int i = 0; i < chariotUnit.Capacity; i++) {
+        for (int i = 0; i < chariotUnit.Count; i++) {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 Destroy(GameObject.FindGameObjectWithTag("Placing"));

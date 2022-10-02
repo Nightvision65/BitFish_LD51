@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Placing
   - Chariot
+  - Outline
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: Grid
     uniqueID: 3422307545
+    locked: 0
+  - name: UnitOutline
+    uniqueID: 2586592815
     locked: 0
   - name: Unit
     uniqueID: 2614895461
