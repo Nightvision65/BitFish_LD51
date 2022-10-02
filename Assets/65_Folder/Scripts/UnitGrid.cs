@@ -36,9 +36,9 @@ public class UnitGrid : MonoBehaviour
         int ty = Mathf.FloorToInt((vec.y - transform.position.y) / gridWidth);
         if (tx >= 0 && tx < width && ty >= 0 && ty < height)
         {
-            tx = Mathf.Clamp(tx, 0, width - w);
-            ty = Mathf.Clamp(ty, 0, height - h);
-            vec = new Vector2(transform.position.x + tx * gridWidth, transform.position.y + ty * gridWidth);
+            tx = Mathf.Clamp(tx, 0 - w, width - w - 1);
+            ty = Mathf.Clamp(ty, 0 - h, height - h - 1);
+            vec = new Vector2(transform.position.x + tx * gridWidth + gridWidth / 2, transform.position.y + ty * gridWidth + gridWidth / 2);
             return new Vector2Int(tx, ty);
         }
         else
