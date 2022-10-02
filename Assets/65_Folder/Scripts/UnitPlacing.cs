@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class UnitPlacing : MonoBehaviour
 {
-    public bool placeable;
+    public bool placeable, canFlip;
     public int unitIndex, unitAngle, unitFlip;
     public Vector2Int gridPos;  //所处网格位置
     private Color outGrid = new Color(1, 1, 1, 0), inGrid = new Color(1, 1, 1, 0.49f), unplaceable = new Color(1, 0.5f, 0.5f, 0.49f);
     private SpriteRenderer mSprite;
     private GameObject mUnit;
     private int unitWidth, unitHeight;
-    private bool keyRotate, keyPlace;
+    private bool keyRotate, keyPlace, keyFlip;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class UnitPlacing : MonoBehaviour
         mSprite.sprite = mUnit.GetComponent<SpriteRenderer>().sprite;
         unitWidth = mUnit.GetComponent<UnitPlaced>().unitWidth;
         unitHeight = mUnit.GetComponent<UnitPlaced>().unitHeight;
+        canFlip = mUnit.GetComponent<UnitPlaced>().canFlip;
     }
 
     // Update is called once per frame
@@ -27,7 +28,9 @@ public class UnitPlacing : MonoBehaviour
     {
         keyRotate = Input.GetButtonDown("Rotate");
         keyPlace = Input.GetButtonDown("Place");
+        keyFlip = Input.GetButtonDown("Flip");
         RotateUnit();
+        FlipUnit();
         SetPosition();
         PlaceUnit();
     }
@@ -62,6 +65,25 @@ public class UnitPlacing : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, 90));
         }
     }
+
+    //翻转物体
+    void FlipUnit()
+    {
+        if (keyFlip && canFlip)
+        {
+            if (unitAngle % 2 == 0)
+            {
+                unitWidth = -unitWidth;
+            }
+            else
+            {
+                unitHeight = -unitHeight;
+            }
+            transform.localScale += new Vector3(0, -2 * transform.localScale.y, 0);
+            unitFlip = (unitFlip + 1) % 2;
+        }
+    }
+
 
     //附着网格位置
     void SetPosition()
@@ -98,6 +120,7 @@ public class UnitPlacing : MonoBehaviour
         if (keyPlace && placeable)
         {
             GameObject placedUnit = Instantiate(mUnit, transform.position, transform.rotation, GameObject.FindGameObjectWithTag("Chariot").transform);
+            placedUnit.transform.localScale = transform.localScale;
             UnitPlaced unitScript = placedUnit.GetComponent<UnitPlaced>();
             unitScript.unitWidth = unitWidth;
             unitScript.unitHeight = unitHeight;
