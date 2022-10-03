@@ -5,12 +5,16 @@ using UnityEngine;
 public class 特效引用 : MonoBehaviour
 {
     public GameObject 火花特效,尘土特效,冒烟特效, 摧毁爆破烟雾特效;
+    public static 特效引用 instance;
 
-
-
+    private void Awake()
+    {
+        instance = this;
+    }
     float time = 0;
     private void Update()
     {
+        /*
         time += Time.deltaTime;
         //特效测试案例
         if (time > 1f)
@@ -23,6 +27,7 @@ public class 特效引用 : MonoBehaviour
 
         生成尘土(transform.position + Vector3.right, 0.3f, 0.1f, 1);
         生成冒烟(transform.position + Vector3.right*2, 0.2f, 0.2f, 1);
+        */
     }
 
     //角度：0-正右方 90-正上方 -90-正下方

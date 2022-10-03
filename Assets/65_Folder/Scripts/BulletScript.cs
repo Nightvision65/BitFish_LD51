@@ -12,6 +12,9 @@ public class BulletScript : MonoBehaviour
         {
             other.gameObject.GetComponentInParent<UnitPlaced>().TakeDamage(damage);
         }
-        Destroy(gameObject, 1f);
+    }
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.relativeVelocity.magnitude < hitVel) Destroy(gameObject);
     }
 }

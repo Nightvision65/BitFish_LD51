@@ -10,9 +10,16 @@ public class GroundDamage : MonoBehaviour
         {
             //¸ßËÙ»¬µØ°å¿ÛÑª
             UnitPlaced script = other.gameObject.GetComponentInParent<UnitPlaced>();
-            if ((script.unitType != 1 || script.isShut) && other.relativeVelocity.magnitude > 1)
+            if (script.unitType != 1 || script.isShut)
             {
-                script.TakeDamage(2);
+                if (other.relativeVelocity.magnitude > 1)
+                {
+                    script.TakeDamage(2);
+                }
+            }
+            else
+            {
+
             }
         }
     }

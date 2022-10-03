@@ -16,6 +16,7 @@ public class UnitPlacing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        craftCam = GameObject.FindGameObjectWithTag("CraftCam").GetComponent<Camera>();
         mUnit = Global.instance.chariotUnit[unitIndex];
         mSprite = GetComponent<SpriteRenderer>();
         mSprite.sprite = mUnit.GetComponent<SpriteRenderer>().sprite;
