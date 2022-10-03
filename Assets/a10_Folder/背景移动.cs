@@ -6,7 +6,7 @@ public class 背景移动 : MonoBehaviour
 {
     public GameObject 跟随物体;
     public float 移动比例 = 0.8f;
-    float startX;
+    float startX, startOtherX;
 
     Transform myTransform, otherTransform;
     // Start is called before the first frame update
@@ -14,7 +14,9 @@ public class 背景移动 : MonoBehaviour
     {
         myTransform = transform;
         otherTransform = 跟随物体.transform;
-        startX = otherTransform.position.x;
+        startOtherX = otherTransform.position.x;
+        startX = myTransform.position.x;
+
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class 背景移动 : MonoBehaviour
     {
 
         Vector3 pos = myTransform.position;
-        pos.x = startX + 移动比例 * (otherTransform.position.x - startX);
+        pos.x = startX + 移动比例 * (otherTransform.position.x - startOtherX);
         myTransform.position = pos;
     }
 }

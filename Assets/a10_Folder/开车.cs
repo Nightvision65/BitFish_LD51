@@ -15,7 +15,7 @@ public class 开车 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 f = Vector2.right * (设定速度 - rig.velocity.magnitude) * 1000f;
+        Vector2 f = Vector2.right * (设定速度 - rig.velocity.magnitude) * 600f;
         rig.AddForce(f);
     }
 }
