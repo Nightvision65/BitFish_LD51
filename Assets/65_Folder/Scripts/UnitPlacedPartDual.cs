@@ -20,10 +20,12 @@ public class UnitPlacedPartDual : UnitPlaced
             {
                 FixedJoint2D joint = unitRbody[0].gameObject.AddComponent<FixedJoint2D>();
                 joint.connectedBody = unitScript.unitRbody[0];
+                mJoint.Add(joint);
                 if (jointUnit[1] != unitScript)
                 {
                     joint = unitRbody[0].gameObject.AddComponent<FixedJoint2D>();
                     joint.connectedBody = jointUnit[1].unitRbody[0];
+                    mJoint.Add(joint);
                 }
             }
         }

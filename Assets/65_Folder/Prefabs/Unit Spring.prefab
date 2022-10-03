@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1769904449847850946}
   - component: {fileID: 1769904449847850957}
   - component: {fileID: 1498628550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Part 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.15
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -146,8 +146,8 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 1769904450739243894}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 40
-  m_MaxTorque: 20
+  m_MaxForce: 400
+  m_MaxTorque: 200
   m_CorrectionScale: 0.05
   m_AutoConfigureOffset: 0
   m_LinearOffset: {x: -0.34, y: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1769904450381417459}
   - component: {fileID: 1769904450381417456}
   - component: {fileID: 1769904450381417457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 1769904450739243894}
   - component: {fileID: 1769904450739243889}
   - component: {fileID: 6728805981394201141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Part 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.15
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -396,8 +396,8 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 1769904449847850946}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 40
-  m_MaxTorque: 20
+  m_MaxForce: 400
+  m_MaxTorque: 200
   m_CorrectionScale: 0.05
   m_AutoConfigureOffset: 0
   m_LinearOffset: {x: 0.34, y: 0}
@@ -412,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6963212504785985045}
   - component: {fileID: 1520267198190723586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 5803389030605873561}
   - component: {fileID: 6766752360871816628}
   - component: {fileID: 5803389030605873540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,10 +587,12 @@ MonoBehaviour:
   unitHeight: 0
   unitAngle: 0
   unitFlip: 0
+  canFlip: 0
   unitRbody:
   - {fileID: 1769904449847850946}
   - {fileID: 1769904450739243894}
   jointUnit: []
+  mJoint: []
 --- !u!1 &7817660698362396943
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770503659144545017}
   - component: {fileID: 7406781616838180172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}
@@ -683,7 +685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787509785309369638}
   - component: {fileID: 1523967067079497082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}

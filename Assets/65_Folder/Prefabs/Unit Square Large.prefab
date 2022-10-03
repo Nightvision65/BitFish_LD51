@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2938034788945560193}
   - component: {fileID: 5287454285708938552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7588993449655032432}
   - component: {fileID: 1117600622424418700}
   - component: {fileID: 3105087650899737061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Square Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -232,6 +232,8 @@ MonoBehaviour:
   unitHeight: 1
   unitAngle: 0
   unitFlip: 0
+  canFlip: 0
   unitRbody:
   - {fileID: 7588993449655032432}
   jointUnit: []
+  mJoint: []

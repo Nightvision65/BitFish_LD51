@@ -7,6 +7,7 @@ public class UnitPlacing : MonoBehaviour
     public bool placeable, canFlip;
     public int unitIndex, unitAngle, unitFlip;
     public Vector2Int gridPos;  //所处网格位置
+    public Camera craftCam;
     private Color outGrid = new Color(1, 1, 1, 0), inGrid = new Color(1, 1, 1, 0.49f), unplaceable = new Color(1, 0.5f, 0.5f, 0.49f);
     private SpriteRenderer mSprite;
     private GameObject mUnit;
@@ -88,7 +89,7 @@ public class UnitPlacing : MonoBehaviour
     //附着网格位置
     void SetPosition()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = craftCam.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         Vector2 tpos = mousePos;
         Vector2Int fvec = new Vector2Int(-1, -1);

@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 323541789
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeable: 0
+  canFlip: 0
   unitIndex: 0
   unitAngle: 0
   unitFlip: 0
   gridPos: {x: 0, y: 0}
+  craftCam: {fileID: 2682447309525572498, guid: 6ea29eb3d648c2340a1d9fb1f0f9204d, type: 3}

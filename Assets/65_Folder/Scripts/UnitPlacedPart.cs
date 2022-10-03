@@ -13,6 +13,7 @@ public class UnitPlacedPart : UnitPlaced
             jointUnit.Add(unitScript);
             FixedJoint2D joint = unitRbody[0].gameObject.AddComponent<FixedJoint2D>();
             joint.connectedBody = unitScript.unitRbody[0];
+            mJoint.Add(joint);
         }
     }
 }

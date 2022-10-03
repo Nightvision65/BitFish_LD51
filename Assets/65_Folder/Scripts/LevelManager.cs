@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     public Transform chariotStartPos;    //战车起始位置
     public GameObject placingObject, chariotObject;
+    public Rigidbody2D theCarrier;
     public bool isConstruct;
     private GameObject mChariot;
     void Awake()
@@ -61,6 +62,7 @@ public class LevelManager : MonoBehaviour
         foreach (Rigidbody2D rbody in mChariot.GetComponentsInChildren<Rigidbody2D>())
         {
             rbody.WakeUp();
+            rbody.velocity = theCarrier.velocity;
         }
         foreach (ConstantForce2D force in mChariot.GetComponentsInChildren<ConstantForce2D>())
         {

@@ -11,7 +11,6 @@ public class JetScript : MonoBehaviour
         force = GetComponent<ConstantForce2D>();
         if(GetComponentInParent<UnitPlaced>().unitFlip == 1)
         {
-            Debug.Log("flipk");
             force.relativeForce = -force.relativeForce;
         }
     }

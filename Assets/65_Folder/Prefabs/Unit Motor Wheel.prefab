@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125543029374516057}
   - component: {fileID: 9127146887002033808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}
@@ -96,7 +96,8 @@ GameObject:
   - component: {fileID: 2570021921807571114}
   - component: {fileID: 8967163154300932704}
   - component: {fileID: 2648666889748015806}
-  m_Layer: 0
+  - component: {fileID: 3057838666354659109}
+  m_Layer: 6
   m_Name: Unit Part Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +182,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.3
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -258,6 +259,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!235 &3057838666354659109
+WheelJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570021921807571094}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 2570021922790210925}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_Suspension:
+    m_DampingRatio: 0.6
+    m_Frequency: 20
+    m_Angle: 90
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: -4600
+    m_MaximumMotorForce: 10000
 --- !u!1 &2570021922790210922
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,8 +295,7 @@ GameObject:
   - component: {fileID: 2570021922790210924}
   - component: {fileID: 2570021922790210925}
   - component: {fileID: 2570021922790210926}
-  - component: {fileID: 2570021922790210927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Part Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +380,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.4
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -381,30 +405,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.12
---- !u!235 &2570021922790210927
-WheelJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570021922790210922}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 2570021921807571112}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_Suspension:
-    m_DampingRatio: 0.6
-    m_Frequency: 20
-    m_Angle: 90
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: 1200
-    m_MaximumMotorForce: 1000
 --- !u!1 &4374903369597261199
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 4374903369597261201}
   - component: {fileID: 2610885365225130452}
   - component: {fileID: 6503684896646001987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Motor Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,10 +507,12 @@ MonoBehaviour:
   unitHeight: 0
   unitAngle: 0
   unitFlip: 0
+  canFlip: 0
   unitRbody:
   - {fileID: 2570021921807571112}
   - {fileID: 2570021922790210925}
   jointUnit: []
+  mJoint: []
 --- !u!1 &7671976415411154825
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9084260490703323942}
   - component: {fileID: 87204232759111670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}

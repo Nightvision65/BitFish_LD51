@@ -15,6 +15,7 @@ public class UnitPlacedSpring : UnitPlaced
             joint.connectedBody = unitScript.unitRbody[0];
             joint = unitScript.unitRbody[0].gameObject.AddComponent<FixedJoint2D>();
             joint.connectedBody = unitRbody[0];
+            mJoint.Add(joint);
         }
         unitScript = UnitGrid.instance.GetUnitScript(x, y, (unitAngle + 2) % 4 + 1);
         if (unitScript && !hasJoint(unitScript) && unitScript.unitType == 0)
@@ -24,6 +25,7 @@ public class UnitPlacedSpring : UnitPlaced
             joint.connectedBody = unitScript.unitRbody[0];
             joint = unitScript.unitRbody[0].gameObject.AddComponent<FixedJoint2D>();
             joint.connectedBody = unitRbody[1];
+            mJoint.Add(joint);
         }
     }
 }

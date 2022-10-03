@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1556110321487195040}
   - component: {fileID: 8307853348086257756}
   - component: {fileID: 6331660331788585013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit Strip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -150,9 +150,11 @@ MonoBehaviour:
   unitHeight: 0
   unitAngle: 0
   unitFlip: 0
+  canFlip: 0
   unitRbody:
   - {fileID: 1556110321487195040}
   jointUnit: []
+  mJoint: []
 --- !u!1 &9158843578422730052
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3177755107999652486}
   - component: {fileID: 129882374926493972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Outline
   m_Icon: {fileID: 0}

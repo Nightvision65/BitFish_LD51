@@ -8,6 +8,7 @@ public class UnitPlaced : MonoBehaviour
     public bool canFlip;
     public List<Rigidbody2D> unitRbody;
     public List<UnitPlaced> jointUnit;
+    public List<FixedJoint2D> mJoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,14 @@ public class UnitPlaced : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetCurrentForce() > 1000f)
+        {
+            Debug.Log(GetCurrentForce());
+        }
+        if (GetCurrentTorque() > 100f)
+        {
+            Debug.Log(GetCurrentTorque());
+        }
     }
 
     public bool hasJoint(UnitPlaced unit)
@@ -34,6 +42,26 @@ public class UnitPlaced : MonoBehaviour
         return has;
     }
 
+    public float GetCurrentForce()
+    {
+        float maxForce = 0;
+        foreach(FixedJoint2D joint in mJoint)
+        {
+            maxForce = Mathf.Max(joint.reactionForce.magnitude, maxForce);
+        }
+        return maxForce;
+    }
+
+    public float GetCurrentTorque()
+    {
+        float maxTorgue = 0;
+        foreach (FixedJoint2D joint in mJoint)
+        {
+            maxTorgue = Mathf.Max(joint.reactionTorque, maxTorgue);
+        }
+        return maxTorgue;
+    }
+
     //焊接零件（继承方法）
     public virtual void UnitCombine(int x, int y)
     {
@@ -45,6 +73,7 @@ public class UnitPlaced : MonoBehaviour
                 jointUnit.Add(unitScript);
                 FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
                 joint.connectedBody = unitScript.unitRbody[0];
+                mJoint.Add(joint);
             }
         }
     }
