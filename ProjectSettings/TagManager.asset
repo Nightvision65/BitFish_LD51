@@ -8,6 +8,7 @@ TagManager:
   - Chariot
   - Outline
   - Unit
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Chariot
   - Base
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: UnitPlacing
     uniqueID: 323541789
+    locked: 0
+  - name: Effect
+    uniqueID: 186714553
     locked: 0

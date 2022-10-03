@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JetScript : MonoBehaviour
+public class JetScript : UnitScript
 {
     private ConstantForce2D force;
     // Start is called before the first frame update

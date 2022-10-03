@@ -281,7 +281,7 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -4000
+    m_MotorSpeed: -3900
     m_MaximumMotorForce: 1000
 --- !u!1 &5519682355977049755
 GameObject:
@@ -502,6 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d539af1d267644ba840dd818d04a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 350
+  nowHP: 0
   unitType: 2
   unitWidth: 1
   unitHeight: 1

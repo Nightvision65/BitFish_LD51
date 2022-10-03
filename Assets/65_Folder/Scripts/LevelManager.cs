@@ -68,6 +68,14 @@ public class LevelManager : MonoBehaviour
         {
             force.enabled = true;
         }
+        foreach (UnitScript script in mChariot.GetComponentsInChildren<UnitScript>())
+        {
+            script.enabled = true;
+        }
+        foreach (UnitPlaced script in mChariot.GetComponentsInChildren<UnitPlaced>())
+        {
+            script.UnitSoloShut(null);
+        }
         mChariot.tag = "Untagged";
         UnitGrid.instance.ClearGrid();
     }

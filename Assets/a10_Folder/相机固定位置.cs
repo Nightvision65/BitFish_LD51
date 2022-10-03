@@ -5,7 +5,7 @@ using UnityEngine;
 public class 相机固定位置 : MonoBehaviour
 {
     public Transform 目标物体, Cat;
-    public float 相机速度;
+    public float 相机速度, 速度修正;
     Transform myTransform;
     float 差距;
     // Start is called before the first frame update
@@ -20,7 +20,14 @@ public class 相机固定位置 : MonoBehaviour
     {
         目标物体 = FindFrontmostChariot();
         float tempx = 目标物体.position.x + 差距;
-        tempx = Mathf.Min(相机速度, Mathf.Abs(tempx - myTransform.position.x)) * Mathf.Sign(tempx - myTransform.position.x);
+        if (tempx > myTransform.position.x)
+        {
+            tempx = Mathf.Min(相机速度 + 速度修正, tempx - myTransform.position.x);
+        }
+        else
+        {
+            tempx = Mathf.Max(-相机速度 + 速度修正, tempx - myTransform.position.x);
+        }
         Vector3 pos = myTransform.position;
         pos.x += tempx;
         myTransform.position = pos;
@@ -32,7 +39,7 @@ public class 相机固定位置 : MonoBehaviour
         Transform chariot = Cat;
         foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Unit"))
         {
-            if (obj.transform.position.x > chariot.position.x) chariot = obj.transform;
+            if (obj.GetComponent<Rigidbody2D>() && obj.transform.position.x > chariot.position.x) chariot = obj.transform;
         }
         return chariot;
     }
