@@ -75,7 +75,7 @@ public class UnitGrid : MonoBehaviour
         }
     }
     
-    //机甲合体！变身！
+    //铠甲合体！变身！
     public void ChariotCombine()
     {
         for (int i = 0; i < width; i++)

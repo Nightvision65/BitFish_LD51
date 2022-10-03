@@ -30,7 +30,6 @@ public class LevelManager : MonoBehaviour
                 up.GetComponent<UnitPlacing>().unitIndex = Random.Range(0, Global.instance.chariotUnit.Capacity);
             }
         }
-
     }
 
     //开始造车
@@ -47,6 +46,10 @@ public class LevelManager : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("Placing"));
         mChariot.transform.position = chariotStartPos.position;
         UnitGrid.instance.ChariotCombine();
+        foreach (SpriteRenderer sprite in mChariot.GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (sprite.gameObject.tag == "Outline") sprite.enabled = true;
+        }
         foreach (Collider2D collider in mChariot.GetComponentsInChildren<Collider2D>())
         {
             collider.enabled = true;
@@ -58,6 +61,10 @@ public class LevelManager : MonoBehaviour
         foreach (Rigidbody2D rbody in mChariot.GetComponentsInChildren<Rigidbody2D>())
         {
             rbody.WakeUp();
+        }
+        foreach (ConstantForce2D force in mChariot.GetComponentsInChildren<ConstantForce2D>())
+        {
+            force.enabled = true;
         }
         mChariot.tag = "Untagged";
         UnitGrid.instance.ClearGrid();

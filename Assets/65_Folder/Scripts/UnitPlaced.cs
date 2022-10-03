@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnitPlaced : MonoBehaviour
 {
     public int unitType, unitWidth, unitHeight, unitAngle, unitFlip;
+    public bool canFlip;
     public List<Rigidbody2D> unitRbody;
     public List<UnitPlaced> jointUnit;
     // Start is called before the first frame update
