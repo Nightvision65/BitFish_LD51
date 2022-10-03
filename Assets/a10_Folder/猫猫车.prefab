@@ -122,7 +122,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.052819725, y: -0.00064883963}
+  m_ConnectedAnchor: {x: -0.052821636, y: -0.0006490946}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -280,7 +280,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.050393775, y: -0.00062342815}
+  m_ConnectedAnchor: {x: -0.05039692, y: -0.00062286854}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -589,7 +589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675582225643743122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7810019, y: -1.1620001, z: -1}
+  m_LocalPosition: {x: 0.7810019, y: -1.1620001, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1675582227003938347}
@@ -847,8 +847,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.3
+      scalar: 1.2
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1230,7 +1230,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.53495497, y: 0.12784493, z: 0}
+    m_Scale: {x: 1, y: 0.2, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -5563,7 +5563,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.051468965, y: 0.0016031816}
+  m_ConnectedAnchor: {x: -0.051469803, y: 0.0016027689}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -5815,7 +5815,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.050398294, y: -0.0006228635}
+  m_ConnectedAnchor: {x: -0.05039692, y: -0.00062316656}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -6152,7 +6152,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.050393775, y: -0.0006228635}
+  m_ConnectedAnchor: {x: -0.05039692, y: -0.00062316656}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -6407,7 +6407,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.052815206, y: -0.00064883963}
+  m_ConnectedAnchor: {x: -0.052814484, y: -0.0006490946}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -6565,7 +6565,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.049576093, y: 0.00020272708}
+  m_ConnectedAnchor: {x: -0.04957676, y: 0.00020295382}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -6723,7 +6723,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.050185967, y: -0.0010232354}
+  m_ConnectedAnchor: {x: -0.050189495, y: -0.0010228157}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -7044,8 +7044,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.3
+      scalar: 1.2
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7427,7 +7427,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.53495497, y: 0.12784493, z: 0}
+    m_Scale: {x: 1, y: 0.2, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -11702,7 +11702,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.050195, y: -0.0010232354}
+  m_ConnectedAnchor: {x: -0.050194263, y: -0.0010231137}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -11765,7 +11765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675582226868172675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3579965, y: -1.1620001, z: -1}
+  m_LocalPosition: {x: -1.3579965, y: -1.1620001, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1675582227003938347}
@@ -12023,8 +12023,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.6
-      minScalar: 0.3
+      scalar: 1.2
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12406,7 +12406,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.53495497, y: 0.12784493, z: 0}
+    m_Scale: {x: 1, y: 0.2, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -16681,7 +16681,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.052810688, y: -0.00064883963}
+  m_ConnectedAnchor: {x: -0.052814484, y: -0.0006490946}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -16839,7 +16839,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.03810501, y: 0.0009770393}
-  m_ConnectedAnchor: {x: -0.050195, y: -0.0010232354}
+  m_ConnectedAnchor: {x: -0.050196648, y: -0.0010231137}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -16999,7 +16999,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.033249877, y: 0.0018219994}
-  m_ConnectedAnchor: {x: -1.5424082, y: 0.23027629}
+  m_ConnectedAnchor: {x: -1.5424118, y: 0.23027706}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -17094,7 +17094,7 @@ Transform:
   m_GameObject: {fileID: 1675582227003938348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40.7168, y: 4.0032, z: 0}
-  m_LocalScale: {x: 0.5277555, y: 0.5277555, z: 0.5277555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675582225675604761}
   - {fileID: 1675582225527993116}
