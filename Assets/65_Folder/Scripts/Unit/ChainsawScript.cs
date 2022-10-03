@@ -22,6 +22,8 @@ public class ChainsawScript : UnitScript
         if (other.gameObject.tag == "Unit")
         {
             other.transform.GetComponentInParent<UnitPlaced>().TakeDamage(damage);
+            特效引用.instance.生成火花特效(transform.position, transform.rotation.z, 2);
+            特效引用.instance.生成火花特效(transform.position, (transform.rotation.z + 180) % 360, 2);
         }
     }
 }

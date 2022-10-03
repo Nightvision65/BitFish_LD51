@@ -110,6 +110,9 @@ MonoBehaviour:
   - {fileID: 3904662012381633697}
   jointUnit: []
   mJoint: []
+  isShut: 0
+  smokeTimer: 99999
+  smokeTime: 99999
 --- !u!1 &3904662012381633702
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +130,7 @@ GameObject:
   - component: {fileID: 3904662012381633707}
   m_Layer: 6
   m_Name: Unit Part Screw
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +257,7 @@ ConstantForce2D:
   m_GameObject: {fileID: 3904662012381633702}
   m_Enabled: 0
   m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: -100, y: 0}
+  m_RelativeForce: {x: -80, y: 0}
   m_Torque: 0
 --- !u!114 &3904662012381633705
 MonoBehaviour:
@@ -300,7 +303,7 @@ GameObject:
   - component: {fileID: 3904662012673063270}
   m_Layer: 6
   m_Name: Unit Part Support
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

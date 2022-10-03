@@ -11,10 +11,8 @@ public class BulletScript : MonoBehaviour
         if (other.relativeVelocity.magnitude >= hitVel && other.gameObject.tag == "Unit")
         {
             other.gameObject.GetComponentInParent<UnitPlaced>().TakeDamage(damage);
+            特效引用.instance.生成火花特效(transform.position, (transform.rotation.z + 180) % 360, 5);
         }
-    }
-    void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.relativeVelocity.magnitude < hitVel) Destroy(gameObject);
+        Destroy(gameObject, 0.1f);
     }
 }

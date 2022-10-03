@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2682447309525572499}
   m_Layer: 0
   m_Name: Craft Camera
-  m_TagString: Untagged
+  m_TagString: CraftCam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -637,7 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 150
   nowHP: 0
-  unitType: 1
+  unitType: 4
   unitWidth: 1
   unitHeight: 0
   unitAngle: 0
@@ -648,3 +648,4 @@ MonoBehaviour:
   - {fileID: 7790679661173955632}
   jointUnit: []
   mJoint: []
+  isShut: 0

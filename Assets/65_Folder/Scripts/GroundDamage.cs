@@ -19,7 +19,7 @@ public class GroundDamage : MonoBehaviour
             }
             else
             {
-
+                特效引用.instance.生成尘土(script.gameObject.transform.GetChild(1).position + new Vector3(0, -0.1f, 0), 0.1f, 0.1f, 1);
             }
         }
     }

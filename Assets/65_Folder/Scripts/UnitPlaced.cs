@@ -11,6 +11,8 @@ public class UnitPlaced : MonoBehaviour
     public List<UnitPlaced> jointUnit;
     public List<FixedJoint2D> mJoint;
     public bool isShut = false;
+    public float smokeTimer = 99999f, smokeTime = 99999f;
+    private bool isDestroyed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,15 @@ public class UnitPlaced : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (smokeTimer < 0)
+        {
+            smokeTimer = smokeTime;
+            特效引用.instance.生成冒烟(transform.position, 0.1f, 0.1f, 3);
+        }
+        else
+        {
+            smokeTimer -= Time.deltaTime;
+        }
     }
 
     public bool hasJoint(UnitPlaced unit)
@@ -43,7 +53,23 @@ public class UnitPlaced : MonoBehaviour
     {
         Debug.Log("Damage:" + damage);
         nowHP -= damage;
-        if (nowHP < 0) Destroy(gameObject);
+        float ratio = nowHP / maxHP;
+        if (ratio <= 0.75)
+        {
+            if (smokeTime > 1)
+            {
+                smokeTimer = 1;
+            }
+            smokeTime = 1;
+        }
+        if (ratio <= 0.5) smokeTime = 0.5f;
+        if (ratio <= 0.25) smokeTime = 0.25f;
+        if (nowHP < 0 && !isDestroyed)
+        {
+            isDestroyed = true;
+            特效引用.instance.生成摧毁爆破烟雾(transform.position, 0.1f, 0.1f, 10);
+            Destroy(gameObject, 0.1f);
+        }
     }
 
     //每有一个组件被摧毁，全体检测是否单独

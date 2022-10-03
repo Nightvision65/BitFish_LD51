@@ -192,6 +192,7 @@ MonoBehaviour:
   - {fileID: 6103563696994937246}
   jointUnit: []
   mJoint: []
+  isShut: 0
 --- !u!1 &6103563696770157669
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ ConstantForce2D:
   m_GameObject: {fileID: 6103563696994937241}
   m_Enabled: 0
   m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: 0, y: 120}
+  m_RelativeForce: {x: 0, y: 100}
   m_Torque: 0
 --- !u!255 &6103563696994937236
 FixedJoint2D:
