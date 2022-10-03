@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1498628550}
   m_Layer: 6
   m_Name: Unit Part 2
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 1769904450739243894}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 400
+  m_MaxForce: 200
   m_MaxTorque: 200
   m_CorrectionScale: 0.05
   m_AutoConfigureOffset: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 6728805981394201141}
   m_Layer: 6
   m_Name: Unit Part 1
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +396,7 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 1769904449847850946}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 400
+  m_MaxForce: 200
   m_MaxTorque: 200
   m_CorrectionScale: 0.05
   m_AutoConfigureOffset: 0
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 5803389030605873540}
   m_Layer: 6
   m_Name: Unit Spring
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

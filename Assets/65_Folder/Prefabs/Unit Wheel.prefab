@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5123290473617346267}
   m_Layer: 6
   m_Name: Unit Part Support
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2743680855914387852}
   m_Layer: 6
   m_Name: Unit Part Wheel
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 2486635500560471388}
   m_Layer: 6
   m_Name: Unit Wheel
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

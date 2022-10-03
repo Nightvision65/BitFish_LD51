@@ -7,6 +7,7 @@ TagManager:
   - Placing
   - Chariot
   - Outline
+  - Unit
   layers:
   - Default
   - TransparentFX

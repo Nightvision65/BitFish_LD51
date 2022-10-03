@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class 相机固定位置 : MonoBehaviour
 {
-    public Transform 目标物体;
+    public Transform 目标物体, Cat;
+    public float 相机速度;
     Transform myTransform;
     float 差距;
     // Start is called before the first frame update
@@ -17,8 +18,22 @@ public class 相机固定位置 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        目标物体 = FindFrontmostChariot();
+        float tempx = 目标物体.position.x + 差距;
+        tempx = Mathf.Min(相机速度, Mathf.Abs(tempx - myTransform.position.x)) * Mathf.Sign(tempx - myTransform.position.x);
         Vector3 pos = myTransform.position;
-        pos.x = 目标物体.position.x + 差距;
+        pos.x += tempx;
         myTransform.position = pos;
+    }
+
+    //找到最前的载具
+    Transform FindFrontmostChariot()
+    {
+        Transform chariot = Cat;
+        foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Unit"))
+        {
+            if (obj.transform.position.x > chariot.position.x) chariot = obj.transform;
+        }
+        return chariot;
     }
 }

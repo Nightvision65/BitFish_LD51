@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3057838666354659109}
   m_Layer: 6
   m_Name: Unit Part Support
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,7 +281,7 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -4600
+    m_MotorSpeed: -4500
     m_MaximumMotorForce: 10000
 --- !u!1 &2570021922790210922
 GameObject:
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 2570021922790210926}
   m_Layer: 6
   m_Name: Unit Part Wheel
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 6503684896646001987}
   m_Layer: 6
   m_Name: Unit Motor Wheel
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

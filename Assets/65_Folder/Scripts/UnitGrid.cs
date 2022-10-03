@@ -65,7 +65,7 @@ public class UnitGrid : MonoBehaviour
             dx = Mathf.RoundToInt(Mathf.Cos((dir - 1) * Mathf.PI / 2));
             dy = Mathf.RoundToInt(Mathf.Sin((dir - 1) * Mathf.PI / 2));
         }
-        if (x + dx >= 0 && x + dx < width && y + dy >= 0 && y + dy <= height)
+        if (x + dx >= 0 && x + dx < width && y + dy >= 0 && y + dy < height)
         {
             return gridUnit[x + dx, y + dy];
         }
