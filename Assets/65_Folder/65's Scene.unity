@@ -3322,7 +3322,7 @@ GameObject:
   - component: {fileID: 824976895}
   - component: {fileID: 824976894}
   - component: {fileID: 824976893}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -3371,7 +3371,6 @@ MonoBehaviour:
   "\u76EE\u6807\u7269\u4F53": {fileID: 227323816}
   Cat: {fileID: 227323816}
   "\u76F8\u673A\u901F\u5EA6": 0.35
-  "\u901F\u5EA6\u4FEE\u6B63": 0.16
 --- !u!114 &824976895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3384,7 +3383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 3ea1dcd801171f24491c0a1154dac8d4, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 673e75de1ba4ed24e8dd480dbe391592, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -3404,7 +3403,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 824976899}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
