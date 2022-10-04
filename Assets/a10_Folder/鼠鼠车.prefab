@@ -15365,7 +15365,7 @@ MonoBehaviour:
   unitAngle: 0
   unitFlip: 0
   canFlip: 0
-  team: 0
+  team: 1
   unitRbody: []
   jointUnit: []
   mJoint: []

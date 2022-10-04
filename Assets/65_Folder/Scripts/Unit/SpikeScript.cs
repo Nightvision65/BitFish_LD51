@@ -24,6 +24,7 @@ public class SpikeScript : UnitScript
             if (other.relativeVelocity.magnitude > 1)
             {
                 other.transform.GetComponentInParent<UnitPlaced>().TakeDamage(damage * velocity);
+                GetComponentInParent<UnitPlaced>().TakeDamage(damage * velocity / 2);
                 特效引用.instance.生成火花特效(transform.position, (Vector2.SignedAngle(Vector2.right, transform.right) + 180) % 360, 10);
             }
         }
@@ -35,7 +36,8 @@ public class SpikeScript : UnitScript
             float velocity = other.relativeVelocity.magnitude;
             if (other.relativeVelocity.magnitude > 1)
             {
-                other.transform.GetComponentInParent<UnitPlaced>().TakeDamage(damage / 6);
+                other.transform.GetComponentInParent<UnitPlaced>().TakeDamage(1);
+                GetComponentInParent<UnitPlaced>().TakeDamage(1);
                 特效引用.instance.生成火花特效(transform.position, (Vector2.SignedAngle(Vector2.right, transform.right) + 180) % 360, 1);
             }
         }

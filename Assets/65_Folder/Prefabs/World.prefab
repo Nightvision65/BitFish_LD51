@@ -62,6 +62,27 @@ MonoBehaviour:
   - {fileID: 6074783597457163212, guid: a0d92c29977c65f49ac7ebdefc1019ab, type: 3}
   - {fileID: 905744944447955338, guid: b30e6114a8e98824c86618fceea81a35, type: 3}
   - {fileID: 3085913323166530050, guid: d5cbc1e2cf9ced446b22454880bb6ccd, type: 3}
+  - {fileID: 3085913323166530050, guid: d5cbc1e2cf9ced446b22454880bb6ccd, type: 3}
+  chariotUnitEnemy:
+  - {fileID: 7409273018198327984, guid: 78486bc0994f7cc4cbd807dc6c02c38b, type: 3}
+  - {fileID: 2958028365543278173, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
+  - {fileID: 7588993449655032428, guid: 0c64bfc91e71fb94e832cbeb728dce93, type: 3}
+  - {fileID: 1556110321487195068, guid: da2e231f279b1a6468bc405a1910c87f, type: 3}
+  - {fileID: 4111726049508749677, guid: 7be924fbbadcceb45af12347e3571346, type: 3}
+  - {fileID: 8784843403443613022, guid: 1eeb59a3ca657d24f99748bfcec810df, type: 3}
+  - {fileID: 4374903369597261199, guid: fc1c60c146c75c14d94d4461a13c7011, type: 3}
+  - {fileID: 6018379096296373886, guid: c80654018a6fdfb4e8da3b6735a95d69, type: 3}
+  - {fileID: 5803389030605873543, guid: 1f6b1268e63ed9944b69cc18dc7d1164, type: 3}
+  - {fileID: 2966868663725552707, guid: e584d28c4d7046342b2075aa0afad851, type: 3}
+  - {fileID: 5451744672663404924, guid: 25426423dad81214ebcf64af21fd971f, type: 3}
+  - {fileID: 5788749112794063040, guid: ed98a2321fd4b6a449fc82bc81dd3307, type: 3}
+  - {fileID: 8287265278967100626, guid: 4c60aaf8951934d46b19270e8d81b82d, type: 3}
+  - {fileID: 4036220159217332945, guid: 36408f6152b5c8c458d1ecb1dafea42f, type: 3}
+  - {fileID: 6074783597457163212, guid: 98ad9cef5a27cca4aa579be28b6661c7, type: 3}
+  - {fileID: 905744944447955338, guid: c20598f10a4eec240b9fbb8262095ccd, type: 3}
+  - {fileID: 3085913323166530050, guid: b674ba678c00e924cbc1a74c4965e1c8, type: 3}
+  - {fileID: 3658621369071964761, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
+  team: 0
 --- !u!114 &4845771678300094176
 MonoBehaviour:
   m_ObjectHideFlags: 0

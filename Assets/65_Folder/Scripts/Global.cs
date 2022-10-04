@@ -5,8 +5,7 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
     public static Global instance;
-    public List<GameObject> chariotUnit;
-    public List<GameObject> chariotUnitEnemy;
+    public List<GameObject> chariotUnit, chariotUnitEnemy, Enemy;
     public int team;
     private int unitPage = 0;
     // Start is called before the first frame update
@@ -44,6 +43,13 @@ public class Global : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Placing"));
                 GameObject up = Instantiate(LevelManager.instance.placingObject, transform);
                 up.GetComponent<UnitPlacing>().unitIndex = i + unitPage * 9;
+            }
+        }
+        for (int i = 2; i < 12; i++)
+        {
+            if(Input.GetKeyDown(KeyCode.F1 + i))
+            {
+                GameObject up = Instantiate(Enemy[i - 2], LevelManager.instance.chariotStartPos.position + new Vector3(20, 0, 0), Quaternion.Euler(0, 0, 0));
             }
         }
     }

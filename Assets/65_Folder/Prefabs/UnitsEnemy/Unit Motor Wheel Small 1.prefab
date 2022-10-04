@@ -403,7 +403,7 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -5300
+    m_MotorSpeed: -5500
     m_MaximumMotorForce: 1000
 --- !u!1 &7653886289243935955
 GameObject:
@@ -599,5 +599,3 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999

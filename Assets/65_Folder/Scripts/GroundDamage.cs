@@ -15,7 +15,7 @@ public class GroundDamage : MonoBehaviour
             {
                 if (other.relativeVelocity.magnitude > velocity)
                 {
-                    script.TakeDamage(damage);
+                    script.TakeDamage(damage * ((script.unitHeight + 1) * (script.unitWidth + 1)));
                 }
             }
             else

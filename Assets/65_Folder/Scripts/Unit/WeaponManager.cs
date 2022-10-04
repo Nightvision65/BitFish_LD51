@@ -9,22 +9,27 @@ public class WeaponManager : UnitScript
     public float fireScale, firerate, shotForce, deviation;
     private float fireTimer = 0;
     private Rigidbody2D mRbody;
-    private bool onFire = false;
+    private SpriteRenderer mSprite;
     // Start is called before the first frame update
     void Start()
     {
         mRbody = GetComponent<Rigidbody2D>();
+        mSprite = GetComponent<SpriteRenderer>();
+        fireTimer = firerate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        WeaponFire();
+        if (mSprite.isVisible)
+        {
+            WeaponFire();
+        }
     }
 
     void WeaponFire()
     {
-        if (fireTimer <= 0 && onFire)
+        if (fireTimer <= 0)
         {
             fireTimer = firerate;
             GameObject bul = Instantiate(bullet, firePosition.position, firePosition.rotation);
@@ -39,14 +44,5 @@ public class WeaponManager : UnitScript
         {
             fireTimer -= Time.deltaTime;
         }
-    }
-
-    private void OnBecameVisible()
-    {
-        onFire = true;
-    }
-    private void OnBecameInvisible()
-    {
-        onFire = false;
     }
 }

@@ -39,7 +39,7 @@ public class 相机固定位置 : MonoBehaviour
         Transform chariot = Cat;
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Unit"))
         {
-            if (obj.GetComponent<Rigidbody2D>() && obj.transform.position.x > chariot.position.x) chariot = obj.transform;
+            if (obj.GetComponent<Rigidbody2D>() && obj.transform.position.x > chariot.position.x && obj.GetComponentInParent<UnitPlaced>().team == 0) chariot = obj.transform;
         }
         return chariot;
     }

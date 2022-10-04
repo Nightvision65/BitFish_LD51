@@ -6,13 +6,16 @@ public class BulletScript : MonoBehaviour
 {
     public float damage;
     private Rigidbody2D mRbody;
+    private SpriteRenderer mSprite;
 
     private void Start()
     {
         mRbody = GetComponent<Rigidbody2D>();
+        mSprite = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
+        if (!mSprite.isVisible) Destroy(gameObject);
         Vector3 nowdir = mRbody.velocity;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, nowdir);
         transform.rotation = rotation * Quaternion.Euler(0, 0, 90);

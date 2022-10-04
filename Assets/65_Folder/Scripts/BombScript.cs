@@ -8,14 +8,17 @@ public class BombScript : MonoBehaviour
     public float damage, radius, power, effectScale;
     private Rigidbody2D mRbody;
     private Vector2 startVelocity;
+    private SpriteRenderer mSprite;
 
     private void Start()
     {
         mRbody = GetComponent<Rigidbody2D>();
         startVelocity = mRbody.velocity;
+        mSprite = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
+        if (!mSprite.isVisible) Destroy(gameObject);
         Vector3 nowdir = mRbody.velocity - startVelocity;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, nowdir);
         transform.rotation = rotation * Quaternion.Euler(0, 0, 90);
@@ -46,7 +49,6 @@ public class BombScript : MonoBehaviour
             float dis = Vector2.Distance(transform.position, rbody.ClosestPoint(transform.position));
             rbody.AddForce(power * dir * (radius - dis) / radius);
             UnitPlaced script = rbody.GetComponentInParent<UnitPlaced>();
-            Debug.Log(dis);
             if (!unitScript.ContainsKey(script))
             {
                 unitScript.Add(script, dis);
