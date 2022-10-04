@@ -5,18 +5,32 @@ using UnityEngine;
 public class BombScript : MonoBehaviour
 {
     public GameObject bombEffect;
-    public float damage, radius, power;
+    public float damage, radius, power, effectScale;
+    private Rigidbody2D mRbody;
+    private Vector2 startVelocity;
+
+    private void Start()
+    {
+        mRbody = GetComponent<Rigidbody2D>();
+        startVelocity = mRbody.velocity;
+    }
+    private void Update()
+    {
+        Vector3 nowdir = mRbody.velocity - startVelocity;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, nowdir);
+        transform.rotation = rotation * Quaternion.Euler(0, 0, 90);
+    }
     void OnCollisionEnter2D(Collision2D other)
     {
         Instantiate(bombEffect, transform.position, Quaternion.Euler(0, 0, 0));
+        bombEffect.transform.localScale = new Vector3(effectScale, effectScale, 1);
         ExplosionDamage();
         Destroy(gameObject);
     }
 
     void ExplosionDamage()
     {
-        Debug.Log("exp");
-        List<UnitPlaced> unitScript = new List<UnitPlaced>();
+        Dictionary<UnitPlaced, float> unitScript = new Dictionary<UnitPlaced, float>();
         List<Rigidbody2D> unitRbody = new List<Rigidbody2D>();
         List<Collider2D> unitCollider = new List<Collider2D>();
         ContactFilter2D filter = new ContactFilter2D();
@@ -28,15 +42,31 @@ public class BombScript : MonoBehaviour
         }
         foreach(Rigidbody2D rbody in unitRbody)
         {
-            float dis = Mathf.Min(Vector2.Distance(transform.position, rbody.transform.position), radius);
-            rbody.AddForce(power * (rbody.transform.position - transform.position).normalized * (radius - dis) / radius);
-            if (!unitScript.Contains(rbody.GetComponentInParent<UnitPlaced>()))
+            Vector2 dir = (rbody.transform.position - transform.position).normalized;
+            float dis = Vector2.Distance(transform.position, rbody.ClosestPoint(transform.position));
+            rbody.AddForce(power * dir * (radius - dis) / radius);
+            UnitPlaced script = rbody.GetComponentInParent<UnitPlaced>();
+            Debug.Log(dis);
+            if (!unitScript.ContainsKey(script))
             {
-                UnitPlaced script = rbody.GetComponentInParent<UnitPlaced>();
-                unitScript.Add(script);
-                script.TakeDamage(damage * (radius - dis) / radius);
-                
+                unitScript.Add(script, dis);
             }
+            else
+            {
+                float tdis;
+                unitScript.TryGetValue(script, out tdis);
+                if (tdis > dis)
+                {
+                    unitScript.Remove(script);
+                    unitScript.Add(script, dis);
+                }
+            }
+        }
+        foreach (UnitPlaced script in unitScript.Keys)
+        {
+            float tdis;
+            unitScript.TryGetValue(script, out tdis);
+            script.TakeDamage(damage * (radius - tdis) / radius);
         }
     }
 }

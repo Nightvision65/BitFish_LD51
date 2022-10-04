@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class 特效引用 : MonoBehaviour
 {
-    public GameObject 火花特效,尘土特效,冒烟特效, 摧毁爆破烟雾特效;
+    public GameObject 火花特效,尘土特效,冒烟特效, 摧毁爆破烟雾特效,喷烟特效;
     public static 特效引用 instance;
 
     private void Awake()
@@ -33,7 +33,7 @@ public class 特效引用 : MonoBehaviour
     //角度：0-正右方 90-正上方 -90-正下方
     public void 生成火花特效(Vector2 位置, float 角度, int 数量)
     {
-        float 散射角 = 90;
+        float 散射角 = 30;
 
         for (int i = 0; i < 数量; i++)
         {
@@ -67,7 +67,18 @@ public class 特效引用 : MonoBehaviour
 
         }
     }
+    public void 生成喷烟(Vector2 位置, float 角度, int 数量)
+    {
+        float 散射角 = 0;
 
+        for (int i = 0; i < 数量; i++)
+        {
+            var angle = Random.Range(-散射角, 散射角) + 角度;
+            Tool_ParticleTemplate.Emit(喷烟特效, 位置, Random.Range(2f, 8f) * ToVector2(angle), 0.5f, angle);
+
+        }
+
+    }
 
 
     public void 生成摧毁爆破烟雾(Vector2 位置, float X随机偏移范围, float y随机偏移范围, int 数量)

@@ -81,7 +81,7 @@ public class UnitPlaced : MonoBehaviour
             if (script) script.UnitSoloShut(this);
         }
     }
-
+    
     //检测自己单独时，关闭功能
     public void UnitSoloShut(UnitPlaced des)
     {

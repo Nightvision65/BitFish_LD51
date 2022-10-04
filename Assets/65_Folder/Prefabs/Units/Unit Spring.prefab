@@ -146,8 +146,8 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 1769904450739243894}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 200
-  m_MaxTorque: 200
+  m_MaxForce: 150
+  m_MaxTorque: 300
   m_CorrectionScale: 0.05
   m_AutoConfigureOffset: 0
   m_LinearOffset: {x: -0.34, y: 0}
@@ -396,8 +396,8 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 1769904449847850946}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 200
-  m_MaxTorque: 200
+  m_MaxForce: 150
+  m_MaxTorque: 300
   m_CorrectionScale: 0.05
   m_AutoConfigureOffset: 0
   m_LinearOffset: {x: 0.34, y: 0}
@@ -595,6 +595,9 @@ MonoBehaviour:
   - {fileID: 1769904450739243894}
   jointUnit: []
   mJoint: []
+  isShut: 0
+  smokeTimer: 99999
+  smokeTime: 99999
 --- !u!1 &7817660698362396943
 GameObject:
   m_ObjectHideFlags: 0

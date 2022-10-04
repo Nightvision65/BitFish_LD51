@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8732528013980213762}
   - component: {fileID: 8732528013980213761}
   - component: {fileID: 8732528013980213760}
-  - component: {fileID: 8732528013980213763}
+  - component: {fileID: 9007494159535297164}
   - component: {fileID: 9022506346899968814}
   m_Layer: 8
-  m_Name: Cannon Ball
+  m_Name: Artillery Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4385501425044414559, guid: 13251eefd4749fb4db041ca94af7644b, type: 3}
+  m_Sprite: {fileID: -3300396339194205850, guid: 13251eefd4749fb4db041ca94af7644b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 9
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -106,8 +106,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &8732528013980213763
-BoxCollider2D:
+--- !u!58 &9007494159535297164
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,19 +119,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.24}
-    newSize: {x: 0.24, y: 0.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.09, y: 0.08}
-  m_EdgeRadius: 0
+  m_Radius: 0.08
 --- !u!114 &9022506346899968814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombEffect: {fileID: 3913791255445957550, guid: c1f6a525c39adc848b05021ed4a5a051, type: 3}
-  damage: 35
-  radius: 0.2
-  power: 1500
-  effectScale: 1
+  damage: 70
+  radius: 0.75
+  power: 2500
+  effectScale: 2.5

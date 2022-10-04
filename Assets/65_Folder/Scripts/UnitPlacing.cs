@@ -11,7 +11,7 @@ public class UnitPlacing : MonoBehaviour
     private Color outGrid = new Color(1, 1, 1, 0), inGrid = new Color(1, 1, 1, 0.49f), unplaceable = new Color(1, 0.5f, 0.5f, 0.49f);
     private SpriteRenderer mSprite;
     private GameObject mUnit;
-    private int unitWidth, unitHeight;
+    public int unitWidth, unitHeight;
     private bool keyRotate, keyPlace, keyFlip;
     // Start is called before the first frame update
     void Start()
@@ -75,11 +75,11 @@ public class UnitPlacing : MonoBehaviour
         {
             if (unitAngle % 2 == 0)
             {
-                unitWidth = -unitWidth;
+                unitHeight = -unitHeight;
             }
             else
             {
-                unitHeight = -unitHeight;
+                unitWidth = -unitWidth;
             }
             transform.localScale += new Vector3(0, -2 * transform.localScale.y, 0);
             unitFlip = (unitFlip + 1) % 2;

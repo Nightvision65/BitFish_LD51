@@ -5,10 +5,11 @@ using UnityEngine;
 public class WeaponManager : UnitScript
 {
     public GameObject bullet, fireEffect;
-    public Transform firePosition;
-    public float fireScale, firerate, shotForce;
+    public Transform firePosition, fireEffectPosition;
+    public float fireScale, firerate, shotForce, deviation;
     private float fireTimer = 0;
     private Rigidbody2D mRbody;
+    private bool onFire = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,20 +24,29 @@ public class WeaponManager : UnitScript
 
     void WeaponFire()
     {
-        if (fireTimer <= 0)
+        if (fireTimer <= 0 && onFire)
         {
             fireTimer = firerate;
             GameObject bul = Instantiate(bullet, firePosition.position, firePosition.rotation);
             Physics2D.IgnoreCollision(bul.GetComponent<Collider2D>(), GetComponent<Collider2D>());
             bul.GetComponent<Rigidbody2D>().velocity = mRbody.velocity;
-            bul.GetComponent<Rigidbody2D>().AddForce(shotForce * firePosition.right);
+            bul.GetComponent<Rigidbody2D>().AddForce(shotForce * (firePosition.right + (Vector3)Random.insideUnitCircle * deviation));
             mRbody.AddForceAtPosition(shotForce * firePosition.right * -1, firePosition.position);
-            GameObject eff = Instantiate(fireEffect, firePosition.position, firePosition.rotation, transform);
+            GameObject eff = Instantiate(fireEffect, fireEffectPosition.position, fireEffectPosition.rotation, transform);
             eff.transform.localScale = new Vector3(fireScale, fireScale, 1);
         }
         else
         {
             fireTimer -= Time.deltaTime;
         }
+    }
+
+    private void OnBecameVisible()
+    {
+        onFire = true;
+    }
+    private void OnBecameInvisible()
+    {
+        onFire = false;
     }
 }
