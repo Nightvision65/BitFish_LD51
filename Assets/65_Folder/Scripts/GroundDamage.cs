@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundDamage : MonoBehaviour
 {
+    public float damage, velocity;
     void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Unit")
@@ -12,9 +13,9 @@ public class GroundDamage : MonoBehaviour
             UnitPlaced script = other.gameObject.GetComponentInParent<UnitPlaced>();
             if (script.unitType != 1 || script.isShut)
             {
-                if (other.relativeVelocity.magnitude > 1)
+                if (other.relativeVelocity.magnitude > velocity)
                 {
-                    script.TakeDamage(2);
+                    script.TakeDamage(damage);
                 }
             }
             else

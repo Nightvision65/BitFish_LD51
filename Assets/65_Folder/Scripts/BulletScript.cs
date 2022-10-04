@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float damage, hitVel;
+    public float damage;
     private Rigidbody2D mRbody;
 
     private void Start()
@@ -20,7 +20,7 @@ public class BulletScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
       //  Debug.Log(other.relativeVelocity.magnitude);
-        if (other.relativeVelocity.magnitude >= hitVel && other.gameObject.tag == "Unit")
+        if (other.gameObject.tag == "Unit")
         {
             other.gameObject.GetComponentInParent<UnitPlaced>().TakeDamage(damage);
             特效引用.instance.生成火花特效(transform.position, (Vector2.SignedAngle(Vector2.right, transform.right) + 180) % 360, 5);

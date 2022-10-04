@@ -7,11 +7,12 @@ public class UnitPlaced : MonoBehaviour
     public float maxHP, nowHP;
     public int unitType, unitWidth, unitHeight, unitAngle, unitFlip;
     public bool canFlip;
+    public int team;
     public List<Rigidbody2D> unitRbody;
     public List<UnitPlaced> jointUnit;
     public List<FixedJoint2D> mJoint;
     public bool isShut = false;
-    public float smokeTimer = 99999f, smokeTime = 99999f;
+    private float smokeTimer = 99999f, smokeTime = 99999f;
     private bool isDestroyed = false;
     // Start is called before the first frame update
     void Start()

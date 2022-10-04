@@ -17,7 +17,13 @@ public class UnitPlacing : MonoBehaviour
     void Start()
     {
         craftCam = GameObject.FindGameObjectWithTag("CraftCam").GetComponent<Camera>();
-        mUnit = Global.instance.chariotUnit[unitIndex];
+        if (Global.instance.team == 0){
+            mUnit = Global.instance.chariotUnit[unitIndex];
+        }
+        else
+        {
+            mUnit = Global.instance.chariotUnitEnemy[unitIndex];
+        }
         mSprite = GetComponent<SpriteRenderer>();
         mSprite.sprite = mUnit.GetComponent<SpriteRenderer>().sprite;
         unitWidth = mUnit.GetComponent<UnitPlaced>().unitWidth;

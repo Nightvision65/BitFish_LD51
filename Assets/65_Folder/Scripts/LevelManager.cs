@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
     {
         isConstruct = false;
         Destroy(GameObject.FindGameObjectWithTag("Placing"));
-        mChariot.transform.position = chariotStartPos.position;
+        mChariot.transform.position = chariotStartPos.position + new Vector3(10 * Global.instance.team, 0, 0);
         UnitGrid.instance.ChariotCombine();
         foreach (SpriteRenderer sprite in mChariot.GetComponentsInChildren<SpriteRenderer>())
         {

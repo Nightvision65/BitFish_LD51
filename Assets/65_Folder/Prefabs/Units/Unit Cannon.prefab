@@ -267,7 +267,7 @@ MonoBehaviour:
   unitHeight: 0
   unitAngle: 0
   unitFlip: 0
-  canFlip: 0
+  canFlip: 1
   unitRbody:
   - {fileID: 6074783597457163216}
   jointUnit: []

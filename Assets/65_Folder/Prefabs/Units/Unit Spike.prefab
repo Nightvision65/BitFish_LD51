@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5788749112794063071}
   - component: {fileID: 5788749112794063068}
   - component: {fileID: 3929041202868523808}
-  - component: {fileID: 1302452011539776329}
+  - component: {fileID: 1030337318485560827}
   m_Layer: 6
   m_Name: Unit Spike
   m_TagString: Unit
@@ -216,7 +216,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.24}
   m_EdgeRadius: 0
---- !u!114 &1302452011539776329
+--- !u!114 &1030337318485560827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5788749112794063040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c95d5d4a3da7434eb67f2219d56083f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 150
@@ -236,6 +236,7 @@ MonoBehaviour:
   unitAngle: 0
   unitFlip: 0
   canFlip: 0
+  team: 0
   unitRbody:
   - {fileID: 5788749112794063068}
   - {fileID: 5820401605915765559}
