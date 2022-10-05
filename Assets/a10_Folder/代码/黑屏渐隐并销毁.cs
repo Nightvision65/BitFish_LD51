@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class 黑屏渐隐并销毁 : MonoBehaviour
 {
-    SpriteRenderer sr;
+    Image sr;
     float alpha;
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<Image>();
         alpha = 1f;
         var c = sr.color;
         c.a = alpha;
