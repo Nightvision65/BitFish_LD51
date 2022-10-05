@@ -30,6 +30,37 @@ public class UnitPlacing : MonoBehaviour
         unitWidth = mUnit.GetComponent<UnitPlaced>().unitWidth;
         unitHeight = mUnit.GetComponent<UnitPlaced>().unitHeight;
         canFlip = mUnit.GetComponent<UnitPlaced>().canFlip;
+        int angle = 0;
+        switch (unitIndex)
+        {
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+                angle = 1;
+                break;
+            case 10:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                angle = 3;
+                break;
+            case 9:
+            case 11:
+            case 12:
+                angle = 2;
+                break;
+        }
+        Debug.Log(angle);
+        for(int i = 0; i < angle; i++)
+        {
+            int t = unitWidth;
+            unitWidth = -unitHeight;
+            unitHeight = t;
+            unitAngle = (unitAngle + 1) % 4;
+            transform.Rotate(new Vector3(0, 0, 90));
+        }
     }
 
     // Update is called once per frame

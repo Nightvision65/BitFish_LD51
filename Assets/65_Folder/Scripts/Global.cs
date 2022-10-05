@@ -5,7 +5,7 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
     public static Global instance;
-    public List<GameObject> chariotUnit, chariotUnitEnemy, Enemy;
+    public List<GameObject> chariotUnit, chariotUnitEnemy;
     public int team;
     private int unitPage = 0;
     // Start is called before the first frame update
@@ -49,7 +49,7 @@ public class Global : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.F1 + i))
             {
-                GameObject up = Instantiate(Enemy[i - 2], LevelManager.instance.chariotStartPos.position + new Vector3(20, 0, 0), Quaternion.Euler(0, 0, 0));
+                LevelManager.instance.EnemySpawn(i - 2);
             }
         }
     }

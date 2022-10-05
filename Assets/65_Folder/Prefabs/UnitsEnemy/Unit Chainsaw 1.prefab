@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c016ddb087e1184b98c304a5c08d866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
 --- !u!1 &7790679662154004939
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,9 +635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 150
+  maxHP: 100
   nowHP: 0
-  unitType: 4
+  unitType: 1
   unitWidth: 1
   unitHeight: 0
   unitAngle: 0
@@ -650,5 +650,3 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999

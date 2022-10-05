@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d539af1d267644ba840dd818d04a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 150
+  maxHP: 100
   nowHP: 0
   unitType: 4
   unitWidth: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   fireEffectPosition: {fileID: 5470064424495045001}
   fireScale: 1.5
   firerate: 2
-  shotForce: 2000
+  shotForce: 750
   deviation: 0
 --- !u!1 &3874734525278579542
 GameObject:

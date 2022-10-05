@@ -162,8 +162,6 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999
 --- !u!114 &4036220159217332950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +180,7 @@ MonoBehaviour:
   fireEffectPosition: {fileID: 1768937322548780619}
   fireScale: 0.5
   firerate: 0.3
-  shotForce: 300
+  shotForce: 200
   deviation: 0.05
 --- !u!1 &4433444575830134991
 GameObject:

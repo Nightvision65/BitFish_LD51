@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 75
+  maxHP: 50
   nowHP: 0
   unitType: 4
   unitWidth: 0
@@ -274,8 +274,6 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999
 --- !u!114 &6074783597457163211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +292,7 @@ MonoBehaviour:
   fireEffectPosition: {fileID: 1384223401960782799}
   fireScale: 1
   firerate: 1
-  shotForce: 1000
+  shotForce: 500
   deviation: 0
 --- !u!1 &7861595828560529680
 GameObject:

@@ -15,7 +15,7 @@ public class WeaponManager : UnitScript
     {
         mRbody = GetComponent<Rigidbody2D>();
         mSprite = GetComponent<SpriteRenderer>();
-        fireTimer = firerate;
+        fireTimer = 0.5f;
     }
 
     // Update is called once per frame

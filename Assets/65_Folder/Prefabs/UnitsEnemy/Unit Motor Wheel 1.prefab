@@ -281,7 +281,7 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -4200
+    m_MotorSpeed: -3500
     m_MaximumMotorForce: 10000
 --- !u!1 &2570021922790210922
 GameObject:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 175
+  maxHP: 125
   nowHP: 0
   unitType: 1
   unitWidth: 1
@@ -517,8 +517,6 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999
 --- !u!1 &7671976415411154825
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891707428288045610}
   m_Layer: 0
-  m_Name: Motorcycle
+  m_Name: MeleeMotor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,11 +391,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3658621369071964743, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
   m_PrefabInstance: {fileID: 1088004501806270145}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &4458377351033541764 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3658621369071964741, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
-  m_PrefabInstance: {fileID: 1088004501806270145}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4458377351033541787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3658621369071964762, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
@@ -436,9 +431,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 575427263954817768, guid: 1eeb59a3ca657d24f99748bfcec810df, type: 3}
-      propertyPath: m_Motor.m_MotorSpeed
-      value: -5300
+    - target: {fileID: 3737035614027585604, guid: 1eeb59a3ca657d24f99748bfcec810df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737035614027585604, guid: 1eeb59a3ca657d24f99748bfcec810df, type: 3}
+      propertyPath: motorCorrect
+      value: -1000
       objectReference: {fileID: 0}
     - target: {fileID: 4133724817777868304, guid: 1eeb59a3ca657d24f99748bfcec810df, type: 3}
       propertyPath: m_Enabled
@@ -695,16 +694,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731553223732651476, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
       propertyPath: mJoint.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7731553223732651476, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
       propertyPath: jointUnit.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7731553223732651476, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
       propertyPath: mJoint.Array.data[0]
       value: 
-      objectReference: {fileID: 3738882284983013569}
+      objectReference: {fileID: 0}
     - target: {fileID: 7731553223732651476, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
       propertyPath: jointUnit.Array.data[0]
       value: 
@@ -715,11 +714,6 @@ PrefabInstance:
       objectReference: {fileID: 4458377351033541787}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
---- !u!1 &1174434978863344160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2958028365543278173, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
-  m_PrefabInstance: {fileID: 4125694475589512317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1174434978863344190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2958028365543278147, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
@@ -735,30 +729,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7731553223732651476, guid: a6f6863d2a92fa84c8739aaf3a2badc3, type: 3}
   m_PrefabInstance: {fileID: 4125694475589512317}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174434978863344160}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c95d5d4a3da7434eb67f2219d56083f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!255 &3738882284983013569
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174434978863344160}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 4458377351033541764}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.24024177, y: -0.24020305}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1001 &8644102962192365717
 PrefabInstance:
   m_ObjectHideFlags: 0

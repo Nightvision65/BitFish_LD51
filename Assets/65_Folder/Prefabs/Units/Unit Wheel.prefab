@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2743680855607082058}
   - component: {fileID: 2743680855607082056}
   - component: {fileID: 4418163002289239910}
-  - component: {fileID: 3296815689881993751}
+  - component: {fileID: 8146284436655257680}
   - component: {fileID: 5123290473617346267}
   m_Layer: 6
   m_Name: Unit Part Support
@@ -161,7 +161,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09, y: 0.04}
   m_EdgeRadius: 0
---- !u!58 &3296815689881993751
+--- !u!58 &8146284436655257680
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,7 +300,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 2
   m_LinearDrag: 0
-  m_AngularDrag: 0.1
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 390af775f0087d44e98fcc1a30876a07, type: 2}
   m_Interpolate: 0
@@ -510,11 +510,13 @@ MonoBehaviour:
   unitAngle: 0
   unitFlip: 0
   canFlip: 0
+  team: 0
   unitRbody:
   - {fileID: 2743680855607082058}
   - {fileID: 2743680855914387855}
   jointUnit: []
   mJoint: []
+  isShut: 0
 --- !u!1 &8753045228485922213
 GameObject:
   m_ObjectHideFlags: 0

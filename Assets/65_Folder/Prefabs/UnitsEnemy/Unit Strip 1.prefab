@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 7.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c95d5d4a3da7434eb67f2219d56083f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 400
+  maxHP: 175
   nowHP: 0
   unitType: 0
   unitWidth: 3
@@ -159,8 +159,6 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999
 --- !u!1 &9158843578422730052
 GameObject:
   m_ObjectHideFlags: 0

@@ -180,7 +180,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c95d5d4a3da7434eb67f2219d56083f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 400
+  maxHP: 200
   nowHP: 0
   unitType: 0
   unitWidth: 1
@@ -235,10 +235,9 @@ MonoBehaviour:
   unitAngle: 0
   unitFlip: 0
   canFlip: 0
+  team: 0
   unitRbody:
   - {fileID: 7588993449655032432}
   jointUnit: []
   mJoint: []
   isShut: 0
-  smokeTimer: 99999
-  smokeTime: 99999

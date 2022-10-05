@@ -68,7 +68,7 @@ public class UnitPlaced : MonoBehaviour
         if (nowHP < 0 && !isDestroyed)
         {
             isDestroyed = true;
-            特效引用.instance.生成摧毁爆破烟雾(transform.position, 0.1f, 0.1f, 10);
+            特效引用.instance.生成摧毁爆破烟雾(transform.position, 0.15f, 0.15f, 20);
             Destroy(gameObject, 0.1f);
         }
     }

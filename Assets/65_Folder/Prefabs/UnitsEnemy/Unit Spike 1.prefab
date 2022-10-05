@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 150
+  maxHP: 100
   nowHP: 0
   unitType: 4
   unitWidth: 0
@@ -354,4 +354,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aeacd8db6675cc43adcd05f324897a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20

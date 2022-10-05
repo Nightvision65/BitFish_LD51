@@ -258,7 +258,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.04, y: 0.12}
   serializedVersion: 2
-  m_Radius: 0.125
+  m_Radius: 0.1
 --- !u!235 &2760916124815538146
 WheelJoint2D:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -3900
+    m_MotorSpeed: -4400
     m_MaximumMotorForce: 1000
 --- !u!1 &5519682355977049755
 GameObject:
@@ -510,6 +510,7 @@ MonoBehaviour:
   unitAngle: 0
   unitFlip: 0
   canFlip: 0
+  team: 0
   unitRbody:
   - {fileID: 5519682355283768153}
   - {fileID: 5519682355977049756}
