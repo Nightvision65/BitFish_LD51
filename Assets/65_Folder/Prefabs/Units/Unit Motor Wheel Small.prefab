@@ -203,7 +203,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.09
 --- !u!1 &7419190782109622343
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -6700
+    m_MotorSpeed: -6000
     m_MaximumMotorForce: 10000
 --- !u!58 &1856445490497198813
 CircleCollider2D:
@@ -599,3 +599,6 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0

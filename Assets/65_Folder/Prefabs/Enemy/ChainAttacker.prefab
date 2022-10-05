@@ -197,9 +197,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be924fbbadcceb45af12347e3571346, type: 3}
---- !u!1 &1450500473116056107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2743680855607082100, guid: 7be924fbbadcceb45af12347e3571346, type: 3}
+--- !u!50 &1450500473116056085 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2743680855607082058, guid: 7be924fbbadcceb45af12347e3571346, type: 3}
   m_PrefabInstance: {fileID: 3617152794422781535}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &809940139283437356 stripped
@@ -218,6 +218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1450500473116056107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2743680855607082100, guid: 7be924fbbadcceb45af12347e3571346, type: 3}
+  m_PrefabInstance: {fileID: 3617152794422781535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!255 &4953762097436266691
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -937,6 +942,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 515034307599284169}
     m_Modifications:
+    - target: {fileID: 2512238399370706759, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
+      propertyPath: force
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512238399370706759, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
+      propertyPath: wheelUp.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512238399370706759, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
+      propertyPath: wheelJoint.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512238399370706759, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
+      propertyPath: wheelUp.Array.data[0]
+      value: 
+      objectReference: {fileID: 1450500473116056085}
+    - target: {fileID: 2512238399370706759, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
+      propertyPath: wheelJoint.Array.data[0]
+      value: 
+      objectReference: {fileID: 2855716655378567705}
     - target: {fileID: 3658621369071964743, guid: 2dd2b368fe2d8ce458e501458743d842, type: 3}
       propertyPath: m_RootOrder
       value: 5

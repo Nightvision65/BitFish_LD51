@@ -28,6 +28,7 @@ public class BombScript : MonoBehaviour
         Instantiate(bombEffect, transform.position, Quaternion.Euler(0, 0, 0));
         bombEffect.transform.localScale = new Vector3(effectScale, effectScale, 1);
         ExplosionDamage();
+        Global.instance.AudioPlay("explosion");
         Destroy(gameObject);
     }
 

@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class 标题场景控制 : MonoBehaviour
 {
     public Image 背景图片;
-
+    public string sceneName;
     bool key;
     float alpha;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class 标题场景控制 : MonoBehaviour
             c.a = alpha;
             背景图片.color = c;
 
-            if (alpha>=1) SceneManager.LoadScene("65's Scene 1");
+            if (alpha>=1) SceneManager.LoadScene(sceneName);
         }
 
 

@@ -121,11 +121,12 @@ MonoBehaviour:
   placingObject: {fileID: 7206596164515300283, guid: 34243283698b0b840adc6867df17eccb, type: 3}
   chariotObject: {fileID: 1379329296333680388, guid: a51a1408c2f14cd43a12e7aaa4465de4, type: 3}
   theCarrier: {fileID: 1675582227003938350}
-  ConstructTime: 11
-  ConstructTimer: 11
+  ConstructTime: 10.999
+  ConstructTimer: 10.999
   StandbyTime: 5
   StandbyTimer: 0
   isConstruct: 0
+  levelTimer: 0
 --- !u!1 &1675582225416248832
 GameObject:
   m_ObjectHideFlags: 0
@@ -17421,6 +17422,9 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0
 --- !u!114 &1675582227003938346
 MonoBehaviour:
   m_ObjectHideFlags: 0

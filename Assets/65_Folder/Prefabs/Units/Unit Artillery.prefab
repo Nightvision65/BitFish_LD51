@@ -131,7 +131,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 15
+  m_Mass: 12
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -192,6 +192,9 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0
 --- !u!114 &3085913323166530053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +215,7 @@ MonoBehaviour:
   firerate: 2
   shotForce: 1000
   deviation: 0
+  shootSound: artillery_fire
 --- !u!1 &3389002551989477254
 GameObject:
   m_ObjectHideFlags: 0

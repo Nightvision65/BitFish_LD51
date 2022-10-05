@@ -38,12 +38,13 @@ public class LevelManager : MonoBehaviour
     public Rigidbody2D theCarrier;
     public float ConstructTime, ConstructTimer, StandbyTime, StandbyTimer;
     public bool isConstruct;
+    public float levelTimer;
     private int enemyCount = 5;
     private GameObject mChariot;
     private bool keySkip, isDestroyed = false;
     private List<Weight> listWeight = new List<Weight>();
     private int loop = 0;
-    private bool isSkip = false;
+    private bool isSkip = true;
     void Awake()
     {
         instance = this;
@@ -52,11 +53,13 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         WeightInitialize();
+        StartConstruct();
     }
 
     // Update is called once per frame
     void Update()
     {
+        levelTimer += Time.deltaTime;
         if (isConstruct)
         {
             keySkip = Input.GetButtonDown("Skip");
@@ -79,12 +82,14 @@ public class LevelManager : MonoBehaviour
             {
                 ConstructTimer = 0;
                 EndConstruct();
+                Global.instance.AudioPlay("chariot_constructed");
                 loop++;
                 if (loop == 4 || loop == 8) LevelUp();
                 if (loop < 4 || isSkip)
                 {
-                    isSkip = false;
-                    EnemySpawn(Random.Range(0, enemyCount));
+                    int index = Random.Range(0, enemyCount);
+                    if (index > 8) { isSkip = false; }
+                    EnemySpawn(index);
                 }
                 else
                 {
@@ -206,15 +211,15 @@ public class LevelManager : MonoBehaviour
     //权重初始化
     public void WeightInitialize()
     {
-        List<int> lBlock = new List<int> { 0, 1, 1, 2, 3 };
+        List<int> lBlock = new List<int> { 0, 0, 1, 1, 2, 3 };
         List<int> lWheel = new List<int> { 4 };
         List<int> lMotor = new List<int> { 5, 5, 5, 5 };
         List<int> lSpecial = new List<int> { 0 };
-        List<int> lWeapon = new List<int> { 11, 13, 13 };
-        Weight wBlock = new Weight(8, 8, 1, lBlock);
+        List<int> lWeapon = new List<int> { 11, 13, 13};
+        Weight wBlock = new Weight(8, 7.5f, 1, lBlock);
         Weight wWheel = new Weight(6, 2, 0.75f, lWheel);
         Weight wMotor = new Weight(15, 1, 0.5f, lMotor);
-        Weight wSpecial = new Weight(0, 0.5f, 0.5f, lSpecial);
+        Weight wSpecial = new Weight(0, 1, 0.5f, lSpecial);
         Weight wWeapon = new Weight(0, 2.5f, 2, lWeapon);
         listWeight.Add(wBlock);
         listWeight.Add(wWheel);

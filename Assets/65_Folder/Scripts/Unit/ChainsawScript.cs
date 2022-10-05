@@ -24,6 +24,7 @@ public class ChainsawScript : UnitScript
             other.transform.GetComponentInParent<UnitPlaced>().TakeDamage(damage);
             特效引用.instance.生成火花特效(transform.position, Vector2.SignedAngle(Vector2.right, transform.right), 2);
             特效引用.instance.生成火花特效(transform.position, (Vector2.SignedAngle(Vector2.right, transform.right) + 180) % 360, 2);
+            Global.instance.AudioPlay("chainsaw_hit");
         }
     }
 }

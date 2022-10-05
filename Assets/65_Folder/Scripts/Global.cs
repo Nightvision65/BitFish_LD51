@@ -8,6 +8,7 @@ public class Global : MonoBehaviour
     public List<GameObject> chariotUnit, chariotUnitEnemy;
     public int team;
     private int unitPage = 0;
+    private AudioSource src;
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,12 +16,19 @@ public class Global : MonoBehaviour
     }
     void Start()
     {
-        LevelManager.instance.StartConstruct();
+        src = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
     {
-        debugFunc();
+    //    debugFunc();
+    }
+
+    //∆’Õ®≤•∑≈“Ù–ß
+    public void AudioPlay(string name)
+    {
+        AudioClip clip = Resources.Load<AudioClip>("Sound/" + name);
+        src.PlayOneShot(clip);
     }
 
     void debugFunc()

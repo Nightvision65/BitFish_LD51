@@ -52,7 +52,6 @@ public class UnitPlacing : MonoBehaviour
                 angle = 2;
                 break;
         }
-        Debug.Log(angle);
         for(int i = 0; i < angle; i++)
         {
             int t = unitWidth;
@@ -160,17 +159,7 @@ public class UnitPlacing : MonoBehaviour
         if (keyPlace && placeable)
         {
             GameObject placedUnit;
-            if (Global.instance.team == 0)
-            {
-                placedUnit = Instantiate(mUnit, transform.position, transform.rotation, GameObject.FindGameObjectWithTag("Chariot").transform);
-            }
-            else
-            {
-                placedUnit = PrefabUtility.InstantiatePrefab(mUnit) as GameObject;
-                placedUnit.transform.SetParent(GameObject.FindGameObjectWithTag("Chariot").transform);
-                placedUnit.transform.position = transform.position;
-                placedUnit.transform.rotation = transform.rotation;
-            }
+            placedUnit = Instantiate(mUnit, transform.position, transform.rotation, GameObject.FindGameObjectWithTag("Chariot").transform);
             placedUnit.transform.localScale = transform.localScale;
             UnitPlaced unitScript = placedUnit.GetComponent<UnitPlaced>();
             unitScript.unitWidth = unitWidth;

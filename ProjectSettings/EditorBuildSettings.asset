@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/65_Folder/65's Scene 1.unity
     guid: b7c5a56580894f64aa773bb199ac7023
+  - enabled: 1
+    path: "Assets/a10_Folder/\u7ED3\u675F\u573A\u666F.unity"
+    guid: a3527a7a4ab82a24a8f47c472c415e4b
   m_configObjects: {}

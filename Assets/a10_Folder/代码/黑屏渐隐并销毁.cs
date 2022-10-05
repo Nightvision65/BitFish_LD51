@@ -20,7 +20,7 @@ public class 黑屏渐隐并销毁 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        alpha -= Time.deltaTime * 5f;
+        alpha -= Time.deltaTime * 3f;
         var c = sr.color;
         c.a = alpha;
         sr.color = c;

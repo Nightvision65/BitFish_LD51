@@ -28,6 +28,7 @@ public class BulletScript : MonoBehaviour
             other.gameObject.GetComponentInParent<UnitPlaced>().TakeDamage(damage);
             特效引用.instance.生成火花特效(transform.position, (Vector2.SignedAngle(Vector2.right, transform.right) + 180) % 360, 5);
         }
+        Global.instance.AudioPlay("bullet_hit");
         Destroy(gameObject);
     }
 }

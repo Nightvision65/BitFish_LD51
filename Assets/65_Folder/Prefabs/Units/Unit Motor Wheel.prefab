@@ -281,8 +281,8 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -5500
-    m_MaximumMotorForce: 10000
+    m_MotorSpeed: -4500
+    m_MaximumMotorForce: 100000
 --- !u!1 &2570021922790210922
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +517,7 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  isActived: 0
 --- !u!1 &7671976415411154825
 GameObject:
   m_ObjectHideFlags: 0

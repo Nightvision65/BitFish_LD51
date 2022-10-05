@@ -7,6 +7,7 @@ public class WeaponManager : UnitScript
     public GameObject bullet, fireEffect;
     public Transform firePosition, fireEffectPosition;
     public float fireScale, firerate, shotForce, deviation;
+    public string shootSound;
     private float fireTimer = 0;
     private Rigidbody2D mRbody;
     private SpriteRenderer mSprite;
@@ -31,6 +32,7 @@ public class WeaponManager : UnitScript
     {
         if (fireTimer <= 0)
         {
+            Global.instance.AudioPlay(shootSound);
             fireTimer = firerate;
             GameObject bul = Instantiate(bullet, firePosition.position, firePosition.rotation);
             Physics2D.IgnoreCollision(bul.GetComponent<Collider2D>(), GetComponent<Collider2D>());

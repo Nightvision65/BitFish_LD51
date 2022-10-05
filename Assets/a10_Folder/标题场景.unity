@@ -2298,6 +2298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u80CC\u666F\u56FE\u7247": {fileID: 126096487}
+  sceneName: 65's Scene 1
 --- !u!4 &1653688346
 Transform:
   m_ObjectHideFlags: 0
@@ -3366,6 +3367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2136081008, guid: 0b7d24a46533e9f468ac9f188a34a293, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1675582225416248861, guid: 0b7d24a46533e9f468ac9f188a34a293, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.052821636

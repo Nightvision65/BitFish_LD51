@@ -12,8 +12,10 @@ public class UnitPlaced : MonoBehaviour
     public List<UnitPlaced> jointUnit;
     public List<FixedJoint2D> mJoint;
     public bool isShut = false;
+    public GameObject explosion, sceneShift;
     private float smokeTimer = 99999f, smokeTime = 99999f;
     private bool isDestroyed = false;
+    public bool isActived = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,9 +70,36 @@ public class UnitPlaced : MonoBehaviour
         if (nowHP < 0 && !isDestroyed)
         {
             isDestroyed = true;
-            特效引用.instance.生成摧毁爆破烟雾(transform.position, 0.15f, 0.15f, 20);
-            Destroy(gameObject, 0.1f);
+            if (maxHP < 1000)
+            {
+                特效引用.instance.生成摧毁爆破烟雾(transform.position, 0.15f, 0.15f, 20);
+                Global.instance.AudioPlay("unit_lost");
+                Destroy(gameObject, 0.1f);
+            }
+            else
+            {
+                GameObject explode = Instantiate(explosion, transform.position, transform.rotation);
+                explode.transform.localScale = new Vector3(10, 10, 1);
+                GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(0, 500000), transform.position + new Vector3(-1, 0, 0));
+                Global.instance.AudioPlay("car_explode");
+                var script = sceneShift.GetComponent<标题场景控制>();
+                if (team == 0)
+                {
+                    script.sceneName = "65's Scene 1";
+                }
+                else
+                {
+                    script.sceneName = "结束场景";
+                }
+                StartCoroutine(ChangeScene(3));
+            }
         }
+    }
+
+    public IEnumerator ChangeScene(float time)
+    {
+        yield return new WaitForSeconds(time);
+        sceneShift.GetComponent<标题场景控制>().按钮();
     }
 
     //每有一个组件被摧毁，全体检测是否单独
@@ -86,7 +115,7 @@ public class UnitPlaced : MonoBehaviour
     //检测自己单独时，关闭功能
     public void UnitSoloShut(UnitPlaced des)
     {
-        if (!isShut && UnitSolo(des))
+        if ((isActived || team == 1) && !isShut && UnitSolo(des))
         {
             isShut = true;
             UnitShutDown();
@@ -128,6 +157,7 @@ public class UnitPlaced : MonoBehaviour
     //焊接零件（继承方法）
     public virtual void UnitCombine(int x, int y)
     {
+        isActived = true;
         for (int dir = 1; dir <= 4; dir++)
         {
             UnitPlaced unitScript = UnitGrid.instance.GetUnitScript(x, y, dir);

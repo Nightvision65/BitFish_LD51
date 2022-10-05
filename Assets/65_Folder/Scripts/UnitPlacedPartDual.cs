@@ -9,6 +9,7 @@ public class UnitPlacedPartDual : UnitPlaced
     //焊接零件（继承方法）
     override public void UnitCombine(int x, int y)
     {
+        isActived = true;
         UnitPlaced unitScript = UnitGrid.instance.GetUnitScript(x, y, unitAngle + 1);
         if (unitScript && unitScript.unitType == 0 && !hasJoint(unitScript))
         {

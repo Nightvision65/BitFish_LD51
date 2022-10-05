@@ -192,6 +192,9 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0
 --- !u!114 &905744944447955341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +215,7 @@ MonoBehaviour:
   firerate: 2
   shotForce: 750
   deviation: 0
+  shootSound: rocket_launch
 --- !u!1 &3874734525278579542
 GameObject:
   m_ObjectHideFlags: 0
