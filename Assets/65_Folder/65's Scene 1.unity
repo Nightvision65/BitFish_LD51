@@ -413,6 +413,10 @@ PrefabInstance:
       propertyPath: chariotEndCollider
       value: 
       objectReference: {fileID: 1896265259}
+    - target: {fileID: 1675582226868172674, guid: 0b7d24a46533e9f468ac9f188a34a293, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 1675582226995574208, guid: 0b7d24a46533e9f468ac9f188a34a293, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1325,7 +1329,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1433542954213849932, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_Size.x
-      value: 200
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 1433542954213849932, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_Size.y
@@ -1333,11 +1337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099293189423833084, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_Size.x
-      value: 200
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3449255198041021887, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.476204
+      value: 965.4762
       objectReference: {fileID: 0}
     - target: {fileID: 3449255198041021887, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2697,7 +2701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8391577828063309438, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.497406
+      value: 965.49744
       objectReference: {fileID: 0}
     - target: {fileID: 8391577828063309438, guid: 05f570f31adc9da4387a89388f25784d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4068,7 +4072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u8DDF\u968F\u7269\u4F53": {fileID: 227323815}
-  "\u79FB\u52A8\u6BD4\u4F8B": 1
+  "\u79FB\u52A8\u6BD4\u4F8B": 0.98
 --- !u!114 &824528584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4082,7 +4086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u8DDF\u968F\u7269\u4F53": {fileID: 227323815}
-  "\u79FB\u52A8\u6BD4\u4F8B": 1
+  "\u79FB\u52A8\u6BD4\u4F8B": 0.95
 --- !u!114 &824528585
 MonoBehaviour:
   m_ObjectHideFlags: 0
