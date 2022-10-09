@@ -6,7 +6,6 @@ public class TutorScript : MonoBehaviour
 {
     bool build = false, placed=false;
     GameObject place;
-    public BGMÇÐ»» bgm;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +35,6 @@ public class TutorScript : MonoBehaviour
         {
             if (LevelManager.instance.ConstructTimer <= 0)
             {
-                bgm.key = true;
                 Destroy(gameObject);
             }
         }

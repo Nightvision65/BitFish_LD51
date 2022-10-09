@@ -54,7 +54,6 @@ public class UnitPlaced : MonoBehaviour
     // ‹…À
     public void TakeDamage(float damage)
     {
-        Debug.Log("Damage:" + damage);
         nowHP -= damage;
         float ratio = nowHP / maxHP;
         if (ratio <= 0.75)

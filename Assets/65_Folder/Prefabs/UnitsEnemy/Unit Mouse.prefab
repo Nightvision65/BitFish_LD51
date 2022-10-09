@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f862c30d57a01145b87860f6cfc6931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 75
   nowHP: 0
   unitType: 5
   unitWidth: 0
@@ -160,6 +160,9 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0
 --- !u!114 &2512238399370706759
 MonoBehaviour:
   m_ObjectHideFlags: 0

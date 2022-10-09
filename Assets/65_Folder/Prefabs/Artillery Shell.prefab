@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombEffect: {fileID: 3913791255445957550, guid: c1f6a525c39adc848b05021ed4a5a051, type: 3}
-  damage: 125
+  damage: 150
   radius: 0.5
   power: 2500
   effectScale: 2.5

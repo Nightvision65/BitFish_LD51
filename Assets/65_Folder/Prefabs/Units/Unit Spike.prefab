@@ -243,6 +243,9 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0
 --- !u!1 &5820401605915765561
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,4 +357,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aeacd8db6675cc43adcd05f324897a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20

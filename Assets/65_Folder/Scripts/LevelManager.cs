@@ -4,14 +4,13 @@ using UnityEngine;
 public class Weight
 {
     public List<int> unit;
-    public float startWeight, baseWeight, addWeight, nowWeight;
-    public Weight(float startW, float baseW, float addW, List<int> u)
+    public float baseWeight, addWeight, nowWeight;
+    public Weight(float baseW, float addW, List<int> u)
     {
         unit = u;
-        startWeight = startW;
         baseWeight = baseW;
         addWeight = addW;
-        nowWeight = startWeight;
+        nowWeight = baseWeight;
     }
     public int Pick()
     {
@@ -24,24 +23,26 @@ public class Weight
     }
     public void Reset()
     {
-        nowWeight = startWeight;
+        nowWeight = baseWeight;
     }
 }
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public Transform Cat;
     public Transform chariotStartPos, chariotEndPos;    //战车起始位置
     public Collider2D chariotStartCollider, chariotEndCollider;
     public List<GameObject> Enemy;
     public GameObject placingObject, chariotObject;
     public Rigidbody2D theCarrier;
-    public float ConstructTime, ConstructTimer, StandbyTime, StandbyTimer;
+    public float ConstructTime, ConstructTimer, StandTime;
     public bool isConstruct;
     public float levelTimer;
+    private Queue<int> unitQueue = new Queue<int>();
     private int enemyCount = 5;
     private GameObject mChariot;
-    private bool keySkip, isDestroyed = false;
+    private bool keySkip, isDestroyed = false, isOpen = false;
     private List<Weight> listWeight = new List<Weight>();
     private int loop = 0;
     private bool isSkip = true;
@@ -53,7 +54,6 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         WeightInitialize();
-        StartConstruct();
     }
 
     // Update is called once per frame
@@ -76,50 +76,51 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
-        if (StandbyTimer == 0)
+        if (ConstructTimer < 0)
         {
-            if (ConstructTimer < 0 && StandbyTimer == 0)
+            ConstructTimer = ConstructTime;
+            isDestroyed = false;
+            isOpen = false;
+            EndConstruct();
+            BGM切换.instance.key = true;
+            ConstructAnimation.instance.Close(StandTime);
+            Global.instance.AudioPlay("chariot_constructed");
+            loop++;
+            if (loop == 3 || loop == 6) LevelUp();
+            if (loop < 3 || isSkip)
             {
-                ConstructTimer = 0;
-                EndConstruct();
-                Global.instance.AudioPlay("chariot_constructed");
-                loop++;
-                if (loop == 4 || loop == 8) LevelUp();
-                if (loop < 4 || isSkip)
-                {
-                    int index = Random.Range(0, enemyCount);
-                    if (index > 8) { isSkip = false; }
-                    EnemySpawn(index);
-                }
-                else
-                {
-                    isSkip = true;
-                }
-                StandbyTimer = StandbyTime;
+                int index = Random.Range(0, enemyCount);
+                //if (index > 8) { isSkip = false; }
+                EnemySpawn(index);
             }
             else
             {
-                ConstructTimer -= Time.deltaTime;
-                if (ConstructTimer == 0) ConstructTimer = -1;
-                if (ConstructTimer < 0.15f && !isDestroyed)
-                {
-                    isDestroyed = true;
-                    DestroyArea();
-                }
+                isSkip = true;
             }
         }
-        if (ConstructTimer == 0) {
-            if (StandbyTimer < 0)
+        else
+        {
+            if (相机固定位置.instance.目标物体 == Cat)
             {
-                isDestroyed = false;
-                StandbyTimer = 0;
-                StartConstruct();
-                ConstructTimer = ConstructTime;
-            }
-            else
-            {
-                StandbyTimer -= Time.deltaTime;
-                if (StandbyTimer == 0) StandbyTimer = -1;
+                if (!isOpen)
+                {
+                    isOpen = true;
+                    ConstructAnimation.instance.Open(StandTime);
+                }
+                if (ConstructAnimation.instance.direction == 0)
+                {
+                    if (!isConstruct)
+                    {
+                        BGM切换.instance.key = false;
+                        StartConstruct();
+                    }
+                    ConstructTimer -= Time.deltaTime * 0.9f;
+                    if (ConstructTimer < 0.15f && !isDestroyed)
+                    {
+                        isDestroyed = true;
+                        DestroyArea();
+                    }
+                }
             }
         }
     }
@@ -128,7 +129,11 @@ public class LevelManager : MonoBehaviour
     public void InstantiatePlacement()
     {
         GameObject up = Instantiate(placingObject, mChariot.transform);
-        up.GetComponent<UnitPlacing>().unitIndex = RandomUnit();
+        up.GetComponent<UnitPlacing>().unitIndex = unitQueue.Dequeue();
+        RandomUnit();
+        List<int> t = new List<int>(unitQueue.ToArray());
+        UnitNextShow.instance.unitIndex = t;
+        UnitNextShow.instance.UnitUpdate();
     }
 
     //摧毁造车位置的车辆
@@ -151,14 +156,22 @@ public class LevelManager : MonoBehaviour
     //开始造车
     public void StartConstruct()
     {
+        Debug.Log("Start");
         isConstruct = true;
         mChariot = Instantiate(chariotObject, UnitGrid.instance.transform.position, Quaternion.Euler(0, 0, 0));
+        unitQueue.Clear();
+        unitQueue.Enqueue(listWeight[0].Pick());
+        for (int i = 0; i < 4; i++)
+        {
+            unitQueue.Enqueue(listWeight[i].Pick());
+        }
         foreach (Weight weight in listWeight) weight.Reset();
     }
 
     //结束造车
     public void EndConstruct()
     {
+        Debug.Log("End");
         isConstruct = false;
         Destroy(GameObject.FindGameObjectWithTag("Placing"));
         mChariot.transform.position = chariotStartPos.position + new Vector3(10 * Global.instance.team, 0, 0);
@@ -194,7 +207,6 @@ public class LevelManager : MonoBehaviour
         }
         mChariot.tag = "Untagged";
         UnitGrid.instance.ClearGrid();
-        ConstructAnimation.instance.Play(StandbyTime);
     }
 
     //刷新敌人
@@ -214,22 +226,22 @@ public class LevelManager : MonoBehaviour
         List<int> lBlock = new List<int> { 0, 0, 1, 1, 2, 3 };
         List<int> lWheel = new List<int> { 4 };
         List<int> lMotor = new List<int> { 5, 5, 5, 5 };
+        List<int> lWeapon = new List<int> { 11, 13 };
         List<int> lSpecial = new List<int> { 0 };
-        List<int> lWeapon = new List<int> { 11, 13, 13};
-        Weight wBlock = new Weight(8, 7.5f, 1, lBlock);
-        Weight wWheel = new Weight(6, 2, 0.75f, lWheel);
-        Weight wMotor = new Weight(15, 1, 0.5f, lMotor);
-        Weight wSpecial = new Weight(0, 1, 0.5f, lSpecial);
-        Weight wWeapon = new Weight(0, 2.5f, 2, lWeapon);
+        Weight wBlock = new Weight(7.5f, 1, lBlock);
+        Weight wWheel = new Weight(2, 0.75f, lWheel);
+        Weight wMotor = new Weight(1, 0.5f, lMotor);
+        Weight wWeapon = new Weight(2.5f, 2.5f, lWeapon);
+        Weight wSpecial = new Weight(1, 0.5f, lSpecial);
         listWeight.Add(wBlock);
         listWeight.Add(wWheel);
         listWeight.Add(wMotor);
-        listWeight.Add(wSpecial);
         listWeight.Add(wWeapon);
+        listWeight.Add(wSpecial);
     }
 
     //分类加权随机
-    public int RandomUnit()
+    public void RandomUnit()
     {
         float maxWeight = 0;
         foreach (Weight weight in listWeight) maxWeight += weight.nowWeight;
@@ -250,27 +262,27 @@ public class LevelManager : MonoBehaviour
                 weight.Drop();
             }
         }
-        return index;
+        unitQueue.Enqueue(index);
     }
 
     //升本
     public void LevelUp()
     {
-        if (loop == 4)
+        if (loop == 3)
         {
             listWeight[2].unit.Add(6);
-            listWeight[3].unit.Add(8);
-            listWeight[4].unit.Add(12);
-            listWeight[4].unit.Add(14);
+            listWeight[3].unit.Add(12);
+            listWeight[3].unit.Add(14);
+            listWeight[4].unit.Add(8);
             enemyCount += 4;
         }
         else
         {
             listWeight[2].unit.Add(7);
-            listWeight[3].unit.Add(9);
-            listWeight[3].unit.Add(10);
-            listWeight[4].unit.Add(15);
-            listWeight[4].unit.Add(16);
+            listWeight[3].unit.Add(15);
+            listWeight[3].unit.Add(16);
+            listWeight[4].unit.Add(9);
+            listWeight[4].unit.Add(10);
             enemyCount += 3;
         }
     }

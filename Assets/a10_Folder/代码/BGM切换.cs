@@ -6,9 +6,14 @@ public class BGM切换 : MonoBehaviour
 {
     public AudioSource 音乐1, 音乐2;
     public float 音量调节系数 = 0.2f;
+    public static BGM切换 instance;
     float 音量1, 音量2;
     public bool key;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         音量1 = 0;

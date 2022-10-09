@@ -14,6 +14,7 @@ public class UnitPlacing : MonoBehaviour
     private GameObject mUnit;
     public int unitWidth, unitHeight;
     private bool keyRotate, keyPlace, keyFlip;
+    private float keyRotate2;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +67,7 @@ public class UnitPlacing : MonoBehaviour
     void Update()
     {
         keyRotate = Input.GetButtonDown("Rotate");
+        keyRotate2 = Input.GetAxisRaw("Rotate2");
         keyPlace = Input.GetButtonDown("Place");
         keyFlip = Input.GetButtonDown("Flip");
         RotateUnit();
@@ -95,13 +97,23 @@ public class UnitPlacing : MonoBehaviour
     //旋转物体角度
     void RotateUnit()
     {
-        if (keyRotate)
+        if (keyRotate || keyRotate2 == 1)
         {
             int t = unitWidth;
             unitWidth = -unitHeight;
             unitHeight = t;
             unitAngle = (unitAngle + 1) % 4;
             transform.Rotate(new Vector3(0, 0, 90));
+        }
+        if(keyRotate2 == -1)
+        {
+            int t = unitWidth;
+            unitWidth = unitHeight;
+            unitHeight = -t;
+            unitAngle = (unitAngle + 3) % 4;
+            Debug.Log(unitAngle);
+            transform.Rotate(new Vector3(0, 0, -90));
+
         }
     }
 
@@ -156,7 +168,7 @@ public class UnitPlacing : MonoBehaviour
     //放置物体
     void PlaceUnit()
     {
-        if (keyPlace && placeable)
+        if (keyPlace && placeable && GameObject.FindGameObjectWithTag("Chariot"))
         {
             GameObject placedUnit;
             placedUnit = Instantiate(mUnit, transform.position, transform.rotation, GameObject.FindGameObjectWithTag("Chariot").transform);

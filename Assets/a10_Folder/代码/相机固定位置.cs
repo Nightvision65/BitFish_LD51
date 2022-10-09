@@ -6,8 +6,13 @@ public class 相机固定位置 : MonoBehaviour
 {
     public Transform 目标物体, Cat;
     public float 相机速度;
+    public static 相机固定位置 instance;
     Transform myTransform;
     float 差距;
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

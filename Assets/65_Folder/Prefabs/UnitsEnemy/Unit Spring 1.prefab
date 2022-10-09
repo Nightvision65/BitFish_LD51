@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2f49a0786f4144595109d2831405ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 100
   nowHP: 0
   unitType: 2
   unitWidth: 1
@@ -597,6 +597,9 @@ MonoBehaviour:
   jointUnit: []
   mJoint: []
   isShut: 0
+  explosion: {fileID: 0}
+  sceneShift: {fileID: 0}
+  isActived: 0
 --- !u!1 &7817660698362396943
 GameObject:
   m_ObjectHideFlags: 0
